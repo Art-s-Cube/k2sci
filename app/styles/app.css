@@ -2996,6 +2996,13 @@ shop-pay-button {
 .w-bg{
   background: #fff;
 }
+.centerText2{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0%;
+  padding-bottom: 3%;
+  color: #000;
+}
 @media (color-index: 48){
 
   .dark\:prose-invert{

@@ -60,10 +60,12 @@ export function Hero1({
               {byline.value}
             </Text>
           )}
-          <Link to={`/collections/${handle}`} className="btn-default">{cta?.value && <Text size="lead">{cta.value}</Text>}</Link>
+          <Link to={`/collections/${handle}`} className="btn-default">
+            {cta?.value && <Text size="lead">{cta.value}</Text>}
+          </Link>
         </div>
       </section>
-      </Link>
+    </Link>
   );
 }
 

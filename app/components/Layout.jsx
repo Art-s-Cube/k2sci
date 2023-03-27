@@ -221,47 +221,49 @@ function DesktopHeader({isHome, menu, openCart, title, brand}) {
       } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
     >
       <div className="flex gap-12">
-
         <Link className="font-bold" to="/" prefetch="intent">
-          <img className="logoImage" src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"></img>
+          <img
+            className="logoImage"
+            src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
+          ></img>
         </Link>
         <nav className="flex gap-8 main-navigation">
           {/* Top level menu items */}
           <ul class=" one-page-scroll-menu navigation-box">
-          {(menu?.items || []).map((item) => (
-            <li key={item.id} className="relative">
-              <Link
-                to={item.to}
-                target={item.target}
-                prefetch="intent"
-                className={({isActive}) =>
-                  isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-                }
-              >
-                {item.title}
+            {(menu?.items || []).map((item) => (
+              <li key={item.id} className="relative">
+                <Link
+                  to={item.to}
+                  target={item.target}
+                  prefetch="intent"
+                  className={({isActive}) =>
+                    isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+                  }
+                >
+                  {item.title}
 
-              {/* Submenu items */}
-              {(item.items || []).length > 0 && (
-                <ul className="sub-menu absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
-                  {(item.items || []).map((subitem) => (
-                    <li class="submenu">
-                    <Link
-                      key={subitem.id}
-                      to={subitem.to}
-                      target={subitem.target}
-                      prefetch="intent"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    >
-                      {subitem.title}
-                    </Link>
-                    </li>
-                  ))}
-                </ul>
-
-              )}
-              </Link>
-            </li>
-          ))}</ul>
+                  {/* Submenu items */}
+                  {(item.items || []).length > 0 && (
+                    <ul className="sub-menu absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
+                      {(item.items || []).map((subitem) => (
+                        <li class="submenu">
+                          <Link
+                            key={subitem.id}
+                            to={subitem.to}
+                            target={subitem.target}
+                            prefetch="intent"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          >
+                            {subitem.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
       <div className="flex items-center gap-1">
