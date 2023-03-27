@@ -474,6 +474,8 @@ shop-pay-button {
   font-size: 40px;
   margin-top: 7%;
   margin-bottom: 3%;
+  padding-top: 4%;
+  color: #000;
 }
 .w-bg{
   background: #fff;
