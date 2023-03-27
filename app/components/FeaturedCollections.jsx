@@ -21,11 +21,12 @@ export function FeaturedCollections({
           return (
             <Link key={collection.id} to={`/collections/${collection.handle}`}>
               <div className="grid gap-4">
-                <div className="card-image bg-primary/5 aspect-[3/2]">
+                <div className="card-image bg-primary/5 ">
                   {collection?.image && (
                     <Image
                       alt={`Image of ${collection.title}`}
                       data={collection.image}
+                      className="featCollections"
                       height={400}
                       sizes="(max-width: 32em) 100vw, 33vw"
                       width={600}

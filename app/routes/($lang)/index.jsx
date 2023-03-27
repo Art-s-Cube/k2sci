@@ -61,7 +61,6 @@ export async function loader({params, context}) {
         FEATURED_COLLECTIONS_QUERY,
         {
           variables: {
-            handle: 'Laboratory, Medical, Pharmaceutical',
             country,
             language,
           },
@@ -186,16 +185,7 @@ export default function Homepage() {
         </Suspense>
       )}
 
-      {tertiaryHero && (
-        <Suspense fallback={<Hero {...skeletons[2]} />}>
-          <Await resolve={tertiaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
+      
     </>
   );
 }

@@ -3049,6 +3049,10 @@ shop-pay-button {
   padding-bottom: 3%;
   color: #000;
 }
+.card-image .featCollections{
+max-height: 320px;
+width: auto;
+}
 @media (color-index: 48){
 
   .dark\:prose-invert{
