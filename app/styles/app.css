@@ -2982,6 +2982,18 @@ shop-pay-button {
     color: #fff; }
 .carousel:hover .slide .legend {
     opacity: 1; }
+.certs{
+  margin: 0px 33%
+}
+.centerText{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+.w-bg{
+  background: #fff;
+}
 @media (color-index: 48){
 
   .dark\:prose-invert{

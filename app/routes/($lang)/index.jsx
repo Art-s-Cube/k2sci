@@ -123,18 +123,29 @@ export default function Homepage() {
       )}
       {Carousel && (
         <Suspense>
-        <div>
-            <img src="https://k2sci.com/content/images/iso_2015.png" />
-            <p className="legend">Legend 1</p>
+        <div className="w-bg">
+        <div className="centerText">
+          <h2>Highly Certified Products</h2>
         </div>
-        <div>
-            <img src="https://k2sci.com/content/images/iso_2016.png" />
-            <p className="legend">Legend 2</p>
-        </div>
+        <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 certs">
+          <div className="flex flex-col gap-2">
+              <img src="https://k2sci.com/content/images/iso_2015.png" />
+              <p className="legend">Legend 1</p>
+          </div>
+          <div className="flex flex-col gap-2">
+              <img src="https://k2sci.com/content/images/iso_2016.png" />
+              <p className="legend">Legend 2</p>
+          </div>
 
-        <div>
-            <img src="https://k2sci.com/content/images/iso_2004.png" />
-            <p className="legend">Legend 3</p>
+          <div className="flex flex-col gap-2">
+              <img src="https://k2sci.com/content/images/iso_2004.png" />
+              <p className="legend">Legend 3</p>
+          </div>
+          <div className="flex flex-col gap-2">
+              <img src="https://k2sci.com/content/images/energy_star.png" />
+              <p className="legend">Legend 3</p>
+          </div>
+        </div>
         </div>
         </Suspense>
       )}
