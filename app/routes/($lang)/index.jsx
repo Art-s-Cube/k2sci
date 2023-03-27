@@ -61,6 +61,7 @@ export async function loader({params, context}) {
         FEATURED_COLLECTIONS_QUERY,
         {
           variables: {
+            handle: 'Laboratory, Medical, Pharmaceutical',
             country,
             language,
           },
