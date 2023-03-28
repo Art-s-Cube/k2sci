@@ -206,7 +206,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
   );
 }
 
-function DesktopHeader({isHome, menu, openCart, title, brand}) {
+function DesktopHeader({isHome, menu, openCart}) {
   const params = useParams();
   const {y} = useWindowScroll();
   return (
@@ -225,11 +225,12 @@ function DesktopHeader({isHome, menu, openCart, title, brand}) {
           <img
             className="logoImage"
             src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
+            alt="k2Sci"
           ></img>
         </Link>
         <nav className="flex gap-8 main-navigation">
           {/* Top level menu items */}
-          <ul class=" one-page-scroll-menu navigation-box">
+          <ul className=" one-page-scroll-menu navigation-box">
             {(menu?.items || []).map((item) => (
               <li key={item.id} className="relative">
                 <Link
@@ -246,7 +247,7 @@ function DesktopHeader({isHome, menu, openCart, title, brand}) {
                   {(item.items || []).length > 0 && (
                     <ul className="sub-menu absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
                       {(item.items || []).map((subitem) => (
-                        <li class="submenu">
+                        <li key={subitem.id} className="submenu">
                           <Link
                             key={subitem.id}
                             to={subitem.to}
@@ -380,16 +381,28 @@ function Footer({menu}) {
       divider={isHome ? 'none' : 'top'}
       as="footer"
       role="contentinfo"
-      className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
+      className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${
+        itemsCount - 1
+      }
         bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
     >
-      <FooterMenu menu={menu} />
+      <div className="footerLogo">
+        <Link className="font-bold" to="/" prefetch="intent">
+          <img
+            className="logoImage"
+            src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
+            alt="K2Scientific"
+          ></img>
+        </Link>
+      </div>
+      <div className="footerMenu">
+        <FooterMenu menu={menu} />
+      </div>
       <CountrySelector />
       <div
         className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
       >
-        &copy; {new Date().getFullYear()} / Shopify, Inc. Hydrogen is an MIT
-        Licensed Open Source project.
+        &copy; {new Date().getFullYear()} / K2Scientific.
       </div>
     </Section>
   );

@@ -32,7 +32,6 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
 
 export const headers = routeHeaders;
-
 export async function loader({params, request, context}) {
   const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
@@ -100,32 +99,30 @@ export async function loader({params, request, context}) {
 
 export default function Product() {
   const {product, shop, recommended} = useLoaderData();
-  const {media, title, vendor, descriptionHtml} = product;
+  const {media, title, metafield, descriptionHtml, id} = product;
   const {shippingPolicy, refundPolicy} = shop;
 
   return (
     <>
-      <Section padding="x" className="px-0">
-        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
+      <Section className="px-6 justCent">
+        <div className="grid container items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
             className="w-screen md:w-full lg:col-span-2"
           />
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
-            <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
+            <section className="flex flex-col w-full gap-10 p-8 md:mx-auto md:px-0">
               <div className="grid gap-2">
                 <Heading as="h1" className="whitespace-normal">
                   {title}
                 </Heading>
-                {vendor && (
-                  <Text className={'opacity-50 font-medium'}>{vendor}</Text>
-                )}
               </div>
               <ProductForm />
               <div className="grid gap-4 py-4">
                 {descriptionHtml && (
-                  <ProductDetail
+                  <ProductDetails
                     title="Product Details"
+                    className="prodDetails"
                     content={descriptionHtml}
                   />
                 )}
@@ -145,6 +142,17 @@ export default function Product() {
                 )}
               </div>
             </section>
+          </div>
+          <div className="grid items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-1 floatingspec">
+            <div className="specifications">
+              {metafield && (
+                <ProductSpecs
+                  title="Specifications"
+                  content={metafield.value}
+                  className="specs"
+                />
+              )}
+            </div>
           </div>
         </div>
       </Section>
@@ -435,7 +443,7 @@ function ProductDetail({title, content, learnMore}) {
               </Text>
               <IconClose
                 className={clsx(
-                  'transition-transform transform-gpu duration-200',
+                  'transition-transform transform-gpu duration-100',
                   !open && 'rotate-[45deg]',
                 )}
               />
@@ -463,7 +471,50 @@ function ProductDetail({title, content, learnMore}) {
     </Disclosure>
   );
 }
+function ProductDetails({title, content, learnMore}) {
+  return (
+    <div key={title} className="grid w-full gap-2">
+      <div className="text-left">
+        <div className="flex justify-between">
+          <Text size="lead" as="h4">
+            {title}
+          </Text>
+        </div>
+      </div>
 
+      <div className={'pb-4 pt-2 grid gap-2'}>
+        <div
+          className="prose dark:prose-invert"
+          dangerouslySetInnerHTML={{__html: content}}
+        />
+      </div>
+    </div>
+  );
+}
+function ProductSpecs({title, content, learnMore}) {
+  return (
+    <div className="flex">
+      <Text size="lead" as="h4">
+        {title}
+      </Text>
+
+      <div
+        className="prose SpecBg"
+        dangerouslySetInnerHTML={{__html: content}}
+      />
+      {learnMore && (
+        <div className="">
+          <Link
+            className="pb-px border-b border-primary/30 text-primary/50"
+            to={learnMore}
+          >
+            Learn more
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}
 const PRODUCT_VARIANT_FRAGMENT = `#graphql
   fragment ProductVariantFragment on ProductVariant {
     id
@@ -537,6 +588,9 @@ const PRODUCT_QUERY = `#graphql
         description
         title
       }
+      metafield(key: "specifications", namespace: "product") {
+        value
+    }
     }
     shop {
       name

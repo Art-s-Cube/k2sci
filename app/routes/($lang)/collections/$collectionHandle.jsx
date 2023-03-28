@@ -117,19 +117,19 @@ export default function Collection() {
   const {collection, collections, appliedFilters} = useLoaderData();
 
   return (
-    <>
-      <PageHeader heading={collection.title}>
+    <div className="justCent grid">
+      <PageHeader heading={collection.title} className="container">
         {collection?.description && (
           <div className="flex items-baseline justify-between w-full">
             <div>
-              <Text format width="narrow" as="p" className="inline-block">
+              <Text format as="p" className="inline-block wide">
                 {collection.description}
               </Text>
             </div>
           </div>
         )}
       </PageHeader>
-      <Section>
+      <Section className="container">
         <SortFilter
           filters={collection.products.filters}
           appliedFilters={appliedFilters}
@@ -143,7 +143,7 @@ export default function Collection() {
           />
         </SortFilter>
       </Section>
-    </>
+    </div>
   );
 }
 

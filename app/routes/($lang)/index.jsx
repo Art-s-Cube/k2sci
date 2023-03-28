@@ -158,16 +158,6 @@ export default function Homepage() {
           </div>
         </Suspense>
       )}
-      {secondaryHero && (
-        <Suspense fallback={<Hero {...skeletons[1]} />}>
-          <Await resolve={secondaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
 
       {featuredCollections && (
         <Suspense>
@@ -184,8 +174,6 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-
-      
     </>
   );
 }
