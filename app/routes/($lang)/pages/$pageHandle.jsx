@@ -39,10 +39,7 @@ export default function Page() {
   return (
     <div className="justCent flex">
       <PageHeader heading={page.title} className="container grid">
-        <div
-          dangerouslySetInnerHTML={{__html: page.body}}
-          className="prose"
-        />
+        <div dangerouslySetInnerHTML={{__html: page.body}} className="prose" />
       </PageHeader>
     </div>
   );

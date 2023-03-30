@@ -411,30 +411,33 @@ function Footer({menu}) {
     : [];
 
   return (
-    <><Section
-      divider={isHome ? 'none' : 'top'}
-      as="footer"
-      role="contentinfo"
-      className={`grid footGrid py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-${itemsCount - 2}
+    <>
+      <Section
+        divider={isHome ? 'none' : 'top'}
+        as="footer"
+        role="contentinfo"
+        className={`grid footGrid py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-${
+          itemsCount - 2
+        }
         bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-    >
-      <div className="footerLogo">
-        <Link className="font-bold" to="/" prefetch="intent">
-          <img
-            className="logoImage"
-            src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
-            alt="K2Scientific"
-          ></img>
-        </Link>
-      </div>
-      <div className="footerMenu">
-        <FooterMenu menu={menu} />
-      </div>
-
-    </Section>
-    <div className={`self-end pb-4 px-12 opacity-50 copyText`}>
+      >
+        <div className="footerLogo">
+          <Link className="font-bold" to="/" prefetch="intent">
+            <img
+              className="logoImage"
+              src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
+              alt="K2Scientific"
+            ></img>
+          </Link>
+        </div>
+        <div className="footerMenu">
+          <FooterMenu menu={menu} />
+        </div>
+      </Section>
+      <div className={`self-end pb-4 px-12 opacity-50 copyText`}>
         &copy; {new Date().getFullYear()} / K2Scientific.
-      </div></>
+      </div>
+    </>
   );
 }
 

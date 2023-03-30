@@ -483,10 +483,7 @@ function ProductDetails({title, content, learnMore}) {
       </div>
 
       <div className={'pb-4 pt-2 grid gap-2'}>
-        <div
-          className="prose"
-          dangerouslySetInnerHTML={{__html: content}}
-        />
+        <div className="prose" dangerouslySetInnerHTML={{__html: content}} />
       </div>
     </div>
   );

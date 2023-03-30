@@ -118,32 +118,32 @@ export default function Collection() {
 
   return (
     <div className="justCent grid">
-      <div  className="container">
-      <PageHeader heading={collection.title}>
-        {collection?.description && (
-          <div className="flex items-baseline justify-between w-full">
-            <div>
-              <Text format as="p" className="inline-block wide">
-                {collection.description}
-              </Text>
+      <div className="container">
+        <PageHeader heading={collection.title}>
+          {collection?.description && (
+            <div className="flex items-baseline justify-between w-full">
+              <div>
+                <Text format as="p" className="inline-block wide">
+                  {collection.description}
+                </Text>
+              </div>
             </div>
-          </div>
-        )}
-      </PageHeader>
-      <Section>
-        <SortFilter
-          filters={collection.products.filters}
-          appliedFilters={appliedFilters}
-          collections={collections}
-        >
-          <ProductGrid
-            key={collection.id}
-            collection={collection}
-            url={`/collections/${collection.handle}`}
-            data-test="product-grid"
-          />
-        </SortFilter>
-      </Section>
+          )}
+        </PageHeader>
+        <Section>
+          <SortFilter
+            filters={collection.products.filters}
+            appliedFilters={appliedFilters}
+            collections={collections}
+          >
+            <ProductGrid
+              key={collection.id}
+              collection={collection}
+              url={`/collections/${collection.handle}`}
+              data-test="product-grid"
+            />
+          </SortFilter>
+        </Section>
       </div>
     </div>
   );

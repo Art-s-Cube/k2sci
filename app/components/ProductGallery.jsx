@@ -1,5 +1,5 @@
 import {ATTR_LOADING_EAGER} from '~/lib/const';
-import { Carousel } from 'react-responsive-carousel';
+import {Carousel} from 'react-responsive-carousel';
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products
  */

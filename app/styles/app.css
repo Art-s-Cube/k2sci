@@ -2663,7 +2663,6 @@ select{
   background: #fff;
   min-width: 85%;
   width: 85%;
-
 }
 .specifications .card-image .text-lead {
   display: block;
@@ -2674,7 +2673,6 @@ select{
   font-size: 40px;
 }
 .specifications .card-image {
-
 }
 .card-image::before {
       content: ' ';
@@ -2689,7 +2687,7 @@ select{
       --tw-shadow-colored: inset 0px 0px 0px 1px var(--tw-shadow-color);
       box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);
       box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
-  display:block;
+  display: block;
     }
 .card-image img{
   aspect-ratio: inherit;
@@ -2810,7 +2808,7 @@ shop-pay-button {
   padding: 25px 5px;
   width: 65%;
 }
-.mobileLogo{
+.mobileLogo {
   padding: 15px 0px;
   width: 100%;
 }
@@ -2908,7 +2906,7 @@ shop-pay-button {
   overflow: hidden;
 }
 .carousel .thumbs {
-  transform: none !Important;
+  transform: none !important;
 }
 .carousel .thumbs {
   position: relative;
@@ -2939,8 +2937,8 @@ shop-pay-button {
   position: relative;
   margin: 0;
   overflow: hidden;
-  max-width:80%;
-  float:right;
+  max-width: 80%;
+  float: right;
 }
 .carousel.carousel-slider .control-arrow {
   top: 0;
@@ -3132,47 +3130,43 @@ shop-pay-button {
   background: #fff;
   min-width: 85%;
   width: 85%;
-
 }
-.shop_attributes{
+.shop_attributes {
   min-width: 100%;
 }
 .SpecBg .shop_attributes tbody tr {
   border-color: #000;
   font-size: 1.1em;
-  line-height: .55em;
-
+  line-height: 0.55em;
 }
-.SpecBg .shop_attributes tbody tr th{
+.SpecBg .shop_attributes tbody tr th {
   padding-left: 3%;
 }
-.SpecBg .shop_attributes tbody tr td{
+.SpecBg .shop_attributes tbody tr td {
   padding-left: 1%;
-  line-height: .95em
+  line-height: 0.95em;
 }
 .SpecBg .shop_attributes tbody tr:nth-child(even) {
   background-color: #f2f2f2;
-  height: 40px
-  }
+  height: 40px;
+}
 .sub_title_section th {
-  padding: 4% 1% !Important;
-
+  padding: 4% 1% !important;
 }
 .sub_title_section th {
   font-size: 1.2em;
   padding-left: 4%;
-  line-height: .75em;
+  line-height: 0.75em;
   background: #68819d;
   color: #fff;
-
 }
 td p {
   font-weight: 600;
 }
-.justCent{
+.justCent {
   justify-content: center;
 }
-.floatingspec{
+.floatingspec {
   position: relative;
   bottom: 10%;
 }
@@ -3185,77 +3179,75 @@ td p {
   font-size: 40px;
 }
 .specifications .flex {
-
 }
 .wide {
-  max-width: 100%
+  max-width: 100%;
 }
 .catprod {
   max-height: 342px;
   height: 342px;
-  background: #FFF;
+  background: #fff;
 }
-.catprod .catprodw{
+.catprod .catprodw {
   max-height: 342px;
 }
 .block {
-  display:block;
+  display: block;
 }
-.mobile-Sub{
+.mobile-Sub {
   position: relative;
-    display: contents;
-    top: 11%;
-    left: 5%;
-    z-index: 911;
-    float: left;
-    min-width: 220px;
-    padding: 0;
-    text-align: left;
-    list-style: none;
-    background-clip: padding-box;
-    /* opacity: 0; */
-    border-radius: 0;
-    /* visibility: hidden; */
-    transition: opacity .4s ease, visibility .4s ease;
-    box-shadow: 0 10px 18px rgba(0,0,0,0.10196);
-
+  display: contents;
+  top: 11%;
+  left: 5%;
+  z-index: 911;
+  float: left;
+  min-width: 220px;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+  /* opacity: 0; */
+  border-radius: 0;
+  /* visibility: hidden; */
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10196);
 }
-.whiteHeader{
-  background-color: #FFFFFF !important
+.whiteHeader {
+  background-color: #ffffff !important;
 }
-.footmen{
+.footmen {
   display: inline-block;
   padding: 11px 15px;
 }
-.footGrid{
+.footGrid {
   grid-template-columns: auto auto !important;
 }
-.footGrid{
+.footGrid {
   grid-template-rows: 75px;
 }
-.currencySelect{
+.currencySelect {
   border: 1px solid #000 !important;
 }
-.currencySelect{
+.currencySelect {
   width: auto;
   float: left;
   margin-left: 2%;
 }
-.countryBox{
+.countryBox {
   width: auto;
   float: left;
   font-weight: bold;
 }
-.curbox{
+.curbox {
   justify-content: right;
 }
 .curselect {
   width: 103%;
 }
-.copyText{
+.copyText {
   text-align: center;
 }
-.footUl{
+.footUl {
   padding: 17px 0px;
 }
 @media (color-index: 48){

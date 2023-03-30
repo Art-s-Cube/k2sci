@@ -44,9 +44,13 @@ export function CountrySelector() {
   }, []);
 
   return (
-    <div ref={observerRef} className="grid gap-4 curbox" onMouseLeave={closeDropdown}>
+    <div
+      ref={observerRef}
+      className="grid gap-4 curbox"
+      onMouseLeave={closeDropdown}
+    >
       <div className="relative curselect">
-      <h3 className="countryBox py-3">Currency</h3>
+        <h3 className="countryBox py-3">Currency</h3>
         <details
           className="currencySelect border rounded border-contrast/30 dark:border-white open:round-b-none overflow-clip"
           ref={closeRef}

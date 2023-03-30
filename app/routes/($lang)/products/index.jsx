@@ -71,79 +71,79 @@ export default function AllProducts() {
   return (
     <div className="justCent grid">
       <div className="container">
-      <PageHeader heading="All Products" variant="allCollections" />
-      <Section>
-        <Pagination connection={products}>
-          {({
-            endCursor,
-            hasNextPage,
-            hasPreviousPage,
-            nextPageUrl,
-            nodes,
-            prevPageUrl,
-            startCursor,
-            nextLinkRef,
-            isLoading,
-          }) => {
-            const itemsMarkup = nodes.map((product, i) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                loading={getImageLoadingPriority(i)}
-              />
-            ));
+        <PageHeader heading="All Products" variant="allCollections" />
+        <Section>
+          <Pagination connection={products}>
+            {({
+              endCursor,
+              hasNextPage,
+              hasPreviousPage,
+              nextPageUrl,
+              nodes,
+              prevPageUrl,
+              startCursor,
+              nextLinkRef,
+              isLoading,
+            }) => {
+              const itemsMarkup = nodes.map((product, i) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  loading={getImageLoadingPriority(i)}
+                />
+              ));
 
-            return (
-              <>
-                {hasPreviousPage && (
-                  <div className="flex items-center justify-center mt-6">
-                    <Button
-                      to={prevPageUrl}
-                      variant="secondary"
-                      prefetch="intent"
-                      width="full"
-                      disabled={!isLoading}
-                      state={{
-                        pageInfo: {
-                          endCursor,
-                          hasNextPage,
-                          startCursor,
-                        },
-                        nodes,
-                      }}
-                    >
-                      {isLoading ? 'Loading...' : 'Previous'}
-                    </Button>
-                  </div>
-                )}
-                <Grid data-test="product-grid">{itemsMarkup}</Grid>
-                {hasNextPage && (
-                  <div className="flex items-center justify-center mt-6">
-                    <Button
-                      ref={nextLinkRef}
-                      to={nextPageUrl}
-                      variant="secondary"
-                      prefetch="intent"
-                      width="full"
-                      disabled={!isLoading}
-                      state={{
-                        pageInfo: {
-                          endCursor,
-                          hasPreviousPage,
-                          startCursor,
-                        },
-                        nodes,
-                      }}
-                    >
-                      {isLoading ? 'Loading...' : 'Next'}
-                    </Button>
-                  </div>
-                )}
-              </>
-            );
-          }}
-        </Pagination>
-      </Section>
+              return (
+                <>
+                  {hasPreviousPage && (
+                    <div className="flex items-center justify-center mt-6">
+                      <Button
+                        to={prevPageUrl}
+                        variant="secondary"
+                        prefetch="intent"
+                        width="full"
+                        disabled={!isLoading}
+                        state={{
+                          pageInfo: {
+                            endCursor,
+                            hasNextPage,
+                            startCursor,
+                          },
+                          nodes,
+                        }}
+                      >
+                        {isLoading ? 'Loading...' : 'Previous'}
+                      </Button>
+                    </div>
+                  )}
+                  <Grid data-test="product-grid">{itemsMarkup}</Grid>
+                  {hasNextPage && (
+                    <div className="flex items-center justify-center mt-6">
+                      <Button
+                        ref={nextLinkRef}
+                        to={nextPageUrl}
+                        variant="secondary"
+                        prefetch="intent"
+                        width="full"
+                        disabled={!isLoading}
+                        state={{
+                          pageInfo: {
+                            endCursor,
+                            hasPreviousPage,
+                            startCursor,
+                          },
+                          nodes,
+                        }}
+                      >
+                        {isLoading ? 'Loading...' : 'Next'}
+                      </Button>
+                    </div>
+                  )}
+                </>
+              );
+            }}
+          </Pagination>
+        </Section>
       </div>
     </div>
   );

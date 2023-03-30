@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
-import {ProductSwimlane, FeaturedCollections, Hero, Hero1} from '~/components';
+import {ProductSwimlane, FeaturedCollections, Hero1} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server';
 import {AnalyticsPageType} from '@shopify/hydrogen';
