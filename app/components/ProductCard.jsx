@@ -48,14 +48,13 @@ export function ProductCard({
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image bg-primary/5">
+          <div className="card-image bg-primary/5 catprod">
             {image && (
               <Image
-                className="object-contain fadeIn"
+                className="object-contain fadeIn catprodw"
                 widths={[320]}
                 sizes="320px"
                 loaderOptions={{
-                  crop: 'center',
                   scale: 1,
                   width: 320,
                   height: 400,

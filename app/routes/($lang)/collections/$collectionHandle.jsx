@@ -118,7 +118,8 @@ export default function Collection() {
 
   return (
     <div className="justCent grid">
-      <PageHeader heading={collection.title} className="container">
+      <div  className="container">
+      <PageHeader heading={collection.title}>
         {collection?.description && (
           <div className="flex items-baseline justify-between w-full">
             <div>
@@ -129,7 +130,7 @@ export default function Collection() {
           </div>
         )}
       </PageHeader>
-      <Section className="container">
+      <Section>
         <SortFilter
           filters={collection.products.filters}
           appliedFilters={appliedFilters}
@@ -143,6 +144,7 @@ export default function Collection() {
           />
         </SortFilter>
       </Section>
+      </div>
     </div>
   );
 }

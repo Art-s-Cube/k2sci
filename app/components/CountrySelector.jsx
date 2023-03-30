@@ -44,17 +44,11 @@ export function CountrySelector() {
   }, []);
 
   return (
-    <section
-      ref={observerRef}
-      className="grid w-full gap-4"
-      onMouseLeave={closeDropdown}
-    >
-      <Heading size="lead" className="cursor-default" as="h3">
-        Country
-      </Heading>
-      <div className="relative">
+    <div ref={observerRef} className="grid gap-4 curbox" onMouseLeave={closeDropdown}>
+      <div className="relative curselect">
+      <h3 className="countryBox py-3">Currency</h3>
         <details
-          className="absolute w-full border rounded border-contrast/30 dark:border-white open:round-b-none overflow-clip"
+          className="currencySelect border rounded border-contrast/30 dark:border-white open:round-b-none overflow-clip"
           ref={closeRef}
         >
           <summary className="flex items-center justify-between w-full px-4 py-3 cursor-pointer">
@@ -87,7 +81,7 @@ export function CountrySelector() {
           </div>
         </details>
       </div>
-    </section>
+    </div>
   );
 }
 

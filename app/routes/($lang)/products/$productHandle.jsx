@@ -452,7 +452,7 @@ function ProductDetail({title, content, learnMore}) {
 
           <Disclosure.Panel className={'pb-4 pt-2 grid gap-2'}>
             <div
-              className="prose dark:prose-invert"
+              className="prose"
               dangerouslySetInnerHTML={{__html: content}}
             />
             {learnMore && (
@@ -484,7 +484,7 @@ function ProductDetails({title, content, learnMore}) {
 
       <div className={'pb-4 pt-2 grid gap-2'}>
         <div
-          className="prose dark:prose-invert"
+          className="prose"
           dangerouslySetInnerHTML={{__html: content}}
         />
       </div>

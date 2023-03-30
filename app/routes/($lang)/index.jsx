@@ -3,7 +3,6 @@ import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
 import {ProductSwimlane, FeaturedCollections, Hero, Hero1} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
@@ -88,16 +87,7 @@ export async function loader({params, context}) {
 }
 
 export default function Homepage() {
-  const {
-    primaryHero,
-    secondaryHero,
-    tertiaryHero,
-    featuredCollections,
-    featuredProducts,
-  } = useLoaderData();
-
-  // TODO: skeletons vs placeholders
-  const skeletons = getHeroPlaceholder([{}, {}, {}]);
+  const {primaryHero, featuredCollections, featuredProducts} = useLoaderData();
 
   return (
     <>
@@ -123,37 +113,34 @@ export default function Homepage() {
       )}
       {Carousel && (
         <Suspense>
-          <div className="w-bg">
-            <div className="centerText">
-              <h2>Highly Certified Products</h2>
-            </div>
-            <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 certs">
-              <div className="flex flex-col gap-2">
-                <img src="https://k2sci.com/content/images/iso_2015.png" />
-                <p className="legend">Legend 1</p>
+          <div className="justCent grid dark:bg">
+            <div className="container">
+              <div className="centerText">
+                <h2>Highly Certified Products</h2>
               </div>
-              <div className="flex flex-col gap-2">
-                <img src="https://k2sci.com/content/images/iso_2016.png" />
-                <p className="legend">Legend 2</p>
+              <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
+                <div className="flex flex-col gap-2">
+                  <img src="https://k2sci.com/content/images/iso_2015.png" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <img src="https://k2sci.com/content/images/iso_2016.png" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <img src="https://k2sci.com/content/images/iso_2004.png" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <img src="https://k2sci.com/content/images/energy_star.png" />
+                </div>
               </div>
-
-              <div className="flex flex-col gap-2">
-                <img src="https://k2sci.com/content/images/iso_2004.png" />
-                <p className="legend">Legend 3</p>
+              <div className="centerText2">
+                <h3>
+                  Compliant with EPA and SNAP HFC-FREE Refrigerant Regulations
+                </h3>
+                <h4>
+                  By maintaining the highest standards, we prove our commitment
+                  to producing quality products our customers can rely on.
+                </h4>
               </div>
-              <div className="flex flex-col gap-2">
-                <img src="https://k2sci.com/content/images/energy_star.png" />
-                <p className="legend">Legend 3</p>
-              </div>
-            </div>
-            <div className="centerText2">
-              <h3>
-                Compliant with EPA and SNAP HFC-FREE Refrigerant Regulations
-              </h3>
-              <h4>
-                By maintaining the highest standards, we prove our commitment to
-                producing quality products our customers can rely on.
-              </h4>
             </div>
           </div>
         </Suspense>

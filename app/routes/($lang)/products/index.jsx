@@ -69,7 +69,8 @@ export default function AllProducts() {
   const {products} = useLoaderData();
 
   return (
-    <>
+    <div className="justCent grid">
+      <div className="container">
       <PageHeader heading="All Products" variant="allCollections" />
       <Section>
         <Pagination connection={products}>
@@ -143,7 +144,8 @@ export default function AllProducts() {
           }}
         </Pagination>
       </Section>
-    </>
+      </div>
+    </div>
   );
 }
 

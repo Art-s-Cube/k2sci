@@ -37,14 +37,14 @@ export default function Page() {
   const {page} = useLoaderData();
 
   return (
-    <>
-      <PageHeader heading={page.title}>
+    <div className="justCent flex">
+      <PageHeader heading={page.title} className="container grid">
         <div
           dangerouslySetInnerHTML={{__html: page.body}}
-          className="prose dark:prose-invert"
+          className="prose"
         />
       </PageHeader>
-    </>
+    </div>
   );
 }
 

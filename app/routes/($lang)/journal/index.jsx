@@ -52,8 +52,8 @@ export default function Journals() {
   const {articles} = useLoaderData();
 
   return (
-    <>
-      <PageHeader heading={BLOG_HANDLE} />
+    <div className="justCent grid">
+      <PageHeader heading={BLOG_HANDLE} className="container" />
       <Section>
         <Grid as="ol" layout="blog">
           {articles.map((article, i) => (
@@ -66,7 +66,7 @@ export default function Journals() {
           ))}
         </Grid>
       </Section>
-    </>
+    </div>
   );
 }
 

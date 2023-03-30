@@ -1,5 +1,4 @@
 import {useIsHomePath} from '~/lib/utils';
-import {useState} from 'react';
 import {
   Drawer,
   useDrawer,
@@ -119,28 +118,19 @@ export function MenuDrawer({isOpen, onClose, menu}) {
     </Drawer>
   );
 }
+
 function MenuMobileNav({menu, onClose}) {
-  const [activeItem, setActiveItem] = useState(null); // add state variable to track active item
-
-  const handleItemClick = (item) => {
-    if (item.items && item.items.length > 0) {
-      // only toggle submenu if item has children
-      setActiveItem(item === activeItem ? null : item); // toggle active item
-    } else {
-      onClose(); // hide menu if link is clicked
-    }
-  };
-
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
       {/* Top level menu items */}
       <ul>
         {(menu?.items || []).map((item) => (
-          <li key={item.title} className="block">
+          <li key={item.title} className="relative">
             <span key={item.id} className="block">
               <Link
                 to={item.to}
-                onClick={() => handleItemClick(item)} // handle item click on button instead of link
+                target={item.target}
+                onClick={onClose}
                 className={({isActive}) =>
                   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
                 }
@@ -148,10 +138,9 @@ function MenuMobileNav({menu, onClose}) {
                 <Text as="span" size="copy">
                   {item.title}
                 </Text>
-              </Link>
-              {(item.items || []).length > 0 &&
-                item === activeItem && ( // only show submenu if item is active
-                  <ul className="mobile-Sub absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
+                {/* Submenu items */}
+                {(item.items || []).length > 0 && (
+                  <ul className="sub-menu mobile-Sub absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
                     {(item.items || []).map((subitem) => (
                       <li key={subitem.title} className="submenu mobile">
                         <Link
@@ -159,7 +148,6 @@ function MenuMobileNav({menu, onClose}) {
                           to={subitem.to}
                           target={subitem.target}
                           prefetch="intent"
-                          onClick={onClose} // hide menu on submenu link click
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         >
                           {subitem.title}
@@ -168,6 +156,7 @@ function MenuMobileNav({menu, onClose}) {
                     ))}
                   </ul>
                 )}
+              </Link>
             </span>
           </li>
         ))}
@@ -175,6 +164,7 @@ function MenuMobileNav({menu, onClose}) {
     </nav>
   );
 }
+
 function MobileHeader({title, isHome, openCart, openMenu}) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
 
@@ -185,7 +175,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader whiteHeader'
+          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
           : 'bg-contrast/80 text-primary'
       } flex lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`}
     >
@@ -225,11 +215,9 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
         to="/"
       >
-        <img
-          className="mobileLogo"
-          src="https://cdn.shopify.com/s/files/1/0735/6019/5354/files/k2.png?v=1679596781"
-          alt="k2Sci"
-        ></img>
+        <Heading className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
+          {title}
+        </Heading>
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -411,11 +399,13 @@ function Footer({menu}) {
     : [];
 
   return (
-    <><Section
+    <Section
       divider={isHome ? 'none' : 'top'}
       as="footer"
       role="contentinfo"
-      className={`grid footGrid py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-${itemsCount - 2}
+      className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${
+        itemsCount - 1
+      }
         bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
     >
       <div className="footerLogo">
@@ -430,15 +420,17 @@ function Footer({menu}) {
       <div className="footerMenu">
         <FooterMenu menu={menu} />
       </div>
-
-    </Section>
-    <div className={`self-end pb-4 px-12 opacity-50 copyText`}>
+      <CountrySelector />
+      <div
+        className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
+      >
         &copy; {new Date().getFullYear()} / K2Scientific.
-      </div></>
+      </div>
+    </Section>
   );
 }
 
-function FooterLink({item}) {
+const FooterLink = ({item}) => {
   if (item.to.startsWith('http')) {
     return (
       <a href={item.to} target={item.target} rel="noopener noreferrer">
@@ -452,7 +444,7 @@ function FooterLink({item}) {
       {item.title}
     </Link>
   );
-}
+};
 
 function FooterMenu({menu}) {
   const styles = {
@@ -461,9 +453,9 @@ function FooterMenu({menu}) {
   };
 
   return (
-    <ul className="footUl">
+    <>
       {(menu?.items || []).map((item) => (
-        <li key={item.id} className="footmen">
+        <section key={item.id} className={styles.section}>
           <Disclosure>
             {({open}) => (
               <>
@@ -497,8 +489,8 @@ function FooterMenu({menu}) {
               </>
             )}
           </Disclosure>
-        </li>
+        </section>
       ))}
-    </ul>
+    </>
   );
 }
