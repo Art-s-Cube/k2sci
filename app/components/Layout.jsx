@@ -260,6 +260,8 @@ function DesktopHeader({isHome, menu, openCart}) {
               className="logoImage"
               src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
               alt="k2Sci"
+              width="98"
+              height="17"
             ></img>
           }
         </Link>
@@ -428,6 +430,8 @@ function Footer({menu}) {
               className="logoFooter"
               src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
               alt="K2Scientific"
+              width="383"
+              height="44"
             ></img>
           </Link>
         </div>
