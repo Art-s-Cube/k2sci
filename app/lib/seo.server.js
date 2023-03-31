@@ -1,7 +1,7 @@
 function root({shop, url}) {
   return {
     title: shop?.name,
-    titleTemplate: '%s | Hydrogen Demo Store',
+    titleTemplate: '%s | K2 Scientific',
     description: truncate(shop?.description ?? ''),
     handle: '@shopify',
     url,
@@ -34,8 +34,8 @@ function root({shop, url}) {
 function home() {
   return {
     title: 'Home',
-    titleTemplate: '%s | Hydrogen Demo Store',
-    description: 'The best place to buy snowboarding products',
+    titleTemplate: '%s | K2 Scientific',
+    description: 'Best Medical Refrigerators & Lab Freezers | K2 Scientific',
     robots: {
       noIndex: false,
       noFollow: false,
