@@ -2,7 +2,7 @@ import React from 'react';
 import {useQuery} from 'graphql-hooks';
 
 const ProductMetafield = ({handle}) => {
-  const {loading, error, data} = useQuery(PRODUCT_QUERY, {
+  const {loading, error, data} = useQuery({
     variables: {handle, country: 'US', language: 'en', selectedOptions: []},
   });
 
