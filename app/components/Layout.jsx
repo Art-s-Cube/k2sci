@@ -470,7 +470,9 @@ function FooterMenu({menu}) {
           <Disclosure>
             {({open}) => (
               <>
-                <Disclosure.Button className="text-left md:cursor-default">
+                <Link
+                to={item.to}
+                className="text-left">
                   <Heading className="flex justify-between" size="lead" as="h3">
                     {item.title}
                     {item?.items?.length > 0 && (
@@ -479,7 +481,7 @@ function FooterMenu({menu}) {
                       </span>
                     )}
                   </Heading>
-                </Disclosure.Button>
+                </Link>
                 {item?.items?.length > 0 ? (
                   <div
                     className={`${
