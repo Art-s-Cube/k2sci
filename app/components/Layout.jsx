@@ -478,7 +478,7 @@ function FooterMenu({menu}) {
             {({open}) => (
               <>
                 <Link to={item.to} className="text-left">
-                  <Heading className="flex justify-between" size="lead" as="h3">
+                  <Heading className="flex justify-between text-black" size="lead" as="h3">
                     {item.title}
                     {item?.items?.length > 0 && (
                       <span className="md:hidden">
