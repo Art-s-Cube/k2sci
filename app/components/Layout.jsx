@@ -228,6 +228,8 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           className="mobileLogo"
           src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-01_ef7ffcf2-b12b-4bc8-931a-f09df40e0530_450x.svg?v=1680287706"
           alt="k2Sci"
+          width="98"
+          height="17"
         ></img>
       </Link>
 
@@ -260,8 +262,8 @@ function DesktopHeader({isHome, menu, openCart}) {
               className="logoImage"
               src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
               alt="k2Sci"
-              width="98"
-              height="17"
+              width="310"
+              height="85"
             ></img>
           }
         </Link>
