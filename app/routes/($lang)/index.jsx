@@ -124,24 +124,32 @@ export default function Homepage() {
                   <img
                     src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2015.png?v=1680291879"
                     alt="ISO 9001"
+                    height="161"
+                    width="161"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2016.png?v=1680291889"
                     alt="ISO 13485"
+                    height="161"
+                    width="161"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2004.png?v=1680291874"
                     alt="ISO 14001"
+                    height="161"
+                    width="161"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/energy_star.png?v=1680291865"
                     alt="Energy Star"
+                    height="161"
+                    width="161"
                   />
                 </div>
               </div>
