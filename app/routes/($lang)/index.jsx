@@ -105,7 +105,7 @@ export default function Homepage() {
                 <ProductSwimlane
                   products={products.nodes}
                   title="Featured Products"
-                  count={2}
+                  count={4}
                 />
               );
             }}
