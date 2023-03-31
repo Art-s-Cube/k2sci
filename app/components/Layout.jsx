@@ -174,7 +174,7 @@ function MenuMobileNav({menu, onClose}) {
     </nav>
   );
 }
-function MobileHeader({title, isHome, openCart, openMenu}) {
+function MobileHeader({isHome, openCart, openMenu}) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
 
   const params = useParams();
@@ -478,7 +478,11 @@ function FooterMenu({menu}) {
             {({open}) => (
               <>
                 <Link to={item.to} className="text-left">
-                  <Heading className="flex justify-between text-black" size="lead" as="h3">
+                  <Heading
+                    className="flex justify-between text-black"
+                    size="lead"
+                    as="h3"
+                  >
                     {item.title}
                     {item?.items?.length > 0 && (
                       <span className="md:hidden">

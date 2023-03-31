@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
@@ -186,7 +185,7 @@ export default function Homepage() {
   );
 }
 
-const COLLECTION_CONTENT_FRAGMENT = `#graphql
+const COLLECTION_CONTENT_FRAGMENT = `
   ${MEDIA_FRAGMENT}
   fragment CollectionContent on Collection {
     id
@@ -215,7 +214,7 @@ const COLLECTION_CONTENT_FRAGMENT = `#graphql
   }
 `;
 
-const HOMEPAGE_SEO_QUERY = `#graphql
+const HOMEPAGE_SEO_QUERY = `
   ${COLLECTION_CONTENT_FRAGMENT}
   query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
@@ -229,7 +228,7 @@ const HOMEPAGE_SEO_QUERY = `#graphql
   }
 `;
 
-const COLLECTION_HERO_QUERY = `#graphql
+const COLLECTION_HERO_QUERY = `
   ${COLLECTION_CONTENT_FRAGMENT}
   query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
@@ -240,7 +239,7 @@ const COLLECTION_HERO_QUERY = `#graphql
 `;
 
 // @see: https://shopify.dev/api/storefront/latest/queries/products
-export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
+export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `
   ${PRODUCT_CARD_FRAGMENT}
   query homepageFeaturedProducts($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
@@ -253,7 +252,7 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
 `;
 
 // @see: https://shopify.dev/api/storefront/latest/queries/collections
-export const FEATURED_COLLECTIONS_QUERY = `#graphql
+export const FEATURED_COLLECTIONS_QUERY = `
   query homepageFeaturedCollections($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
     collections(

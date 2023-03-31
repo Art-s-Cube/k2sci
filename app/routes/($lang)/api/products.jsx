@@ -58,7 +58,7 @@ export async function loader({request, context: {storefront}}) {
   });
 }
 
-const PRODUCTS_QUERY = `#graphql
+const PRODUCTS_QUERY = `
   ${PRODUCT_CARD_FRAGMENT}
   query (
     $query: String

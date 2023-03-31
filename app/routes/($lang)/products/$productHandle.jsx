@@ -99,7 +99,7 @@ export async function loader({params, request, context}) {
 
 export default function Product() {
   const {product, shop, recommended} = useLoaderData();
-  const {media, title, metafield, descriptionHtml, id} = product;
+  const {media, title, metafield, descriptionHtml} = product;
   const {shippingPolicy, refundPolicy} = shop;
 
   return (
@@ -471,7 +471,7 @@ function ProductDetail({title, content, learnMore}) {
     </Disclosure>
   );
 }
-function ProductDetails({title, content, learnMore}) {
+function ProductDetails({title, content}) {
   return (
     <div key={title} className="grid w-full gap-2">
       <div className="text-left">
@@ -548,7 +548,7 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
   }
 `;
 
-const PRODUCT_QUERY = `#graphql
+const PRODUCT_QUERY = `
   ${MEDIA_FRAGMENT}
   ${PRODUCT_VARIANT_FRAGMENT}
   query Product(
@@ -606,7 +606,7 @@ const PRODUCT_QUERY = `#graphql
   }
 `;
 
-const RECOMMENDED_PRODUCTS_QUERY = `#graphql
+const RECOMMENDED_PRODUCTS_QUERY = `
   ${PRODUCT_CARD_FRAGMENT}
   query productRecommendations(
     $productId: ID!
