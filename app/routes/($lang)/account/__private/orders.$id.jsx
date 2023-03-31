@@ -400,13 +400,13 @@ const CUSTOMER_ORDER_QUERY = `#graphql
         orderNumber
         processedAt
         fulfillmentStatus
-        totalTaxV2 {
+        totalTax {
           ...Money
         }
-        totalPriceV2 {
+        totalPrice {
           ...Money
         }
-        subtotalPriceV2 {
+        subtotalPrice {
           ...Money
         }
         shippingAddress {

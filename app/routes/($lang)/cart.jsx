@@ -222,7 +222,7 @@ export async function cartCreate({input, storefront}) {
   return cartCreate;
 }
 
-const ADD_LINES_MUTATION = `#graphql
+const ADD_LINES_MUTATION = `
   mutation ($cartId: ID!, $lines: [CartLineInput!]!, $country: CountryCode = ZZ, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
     cartLinesAdd(cartId: $cartId, lines: $lines) {
@@ -256,7 +256,7 @@ export async function cartAdd({cartId, lines, storefront}) {
   return cartLinesAdd;
 }
 
-const REMOVE_LINE_ITEMS_MUTATION = `#graphql
+const REMOVE_LINE_ITEMS_MUTATION = `
   mutation ($cartId: ID!, $lineIds: [ID!]!, $language: LanguageCode, $country: CountryCode)
   @inContext(country: $country, language: $language) {
     cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
@@ -309,7 +309,7 @@ export async function cartRemove({cartId, lineIds, storefront}) {
   return cartLinesRemove;
 }
 
-const LINES_UPDATE_MUTATION = `#graphql
+const LINES_UPDATE_MUTATION = `
   ${LINES_CART_FRAGMENT}
   ${USER_ERROR_FRAGMENT}
   mutation ($cartId: ID!, $lines: [CartLineUpdateInput!]!, $language: LanguageCode, $country: CountryCode)
@@ -349,7 +349,7 @@ export async function cartUpdate({cartId, lines, storefront}) {
  * @see https://shopify.dev/api/storefront/2022-10/mutations/cartBuyerIdentityUpdate
  * @preserve
  */
-const UPDATE_CART_BUYER_COUNTRY = `#graphql
+const UPDATE_CART_BUYER_COUNTRY = `
  mutation(
    $cartId: ID!
    $buyerIdentity: CartBuyerIdentityInput!
@@ -405,7 +405,7 @@ export async function cartUpdateBuyerIdentity({
   return cartBuyerIdentityUpdate;
 }
 
-const DISCOUNT_CODES_UPDATE = `#graphql
+const DISCOUNT_CODES_UPDATE = `
   mutation cartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!], $country: CountryCode = ZZ)
     @inContext(country: $country) {
     cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
