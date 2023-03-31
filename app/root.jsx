@@ -19,6 +19,10 @@ import {seoPayload} from '~/lib/seo.server';
 import {DEFAULT_LOCALE, parseMenu} from './lib/utils';
 import invariant from 'tiny-invariant';
 import {useAnalytics} from './hooks/useAnalytics';
+export const meta = () => ({
+  charset: 'utf-8',
+  viewport: 'width=device-width,initial-scale=1',
+});
 
 export const links = () => {
   return [
@@ -34,11 +38,6 @@ export const links = () => {
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
   ];
 };
-
-export const meta = () => ({
-  charset: 'utf-8',
-  viewport: 'width=device-width,initial-scale=1',
-});
 
 export async function loader({request, context}) {
   const [customerAccessToken, cartId, layout] = await Promise.all([
@@ -72,8 +71,8 @@ export default function App() {
   return (
     <html lang={locale.language}>
       <head>
-        <Seo />
         <Meta />
+        <Seo />
         <Links />
       </head>
       <body>
