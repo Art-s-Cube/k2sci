@@ -114,10 +114,10 @@ export default function Homepage() {
       )}
       {Carousel && (
         <Suspense>
-          <div className="justCent grid dark:bg">
+          <div className="justCent grid darkbg">
             <div className="container">
               <div className="centerText">
-                <h2>Highly Certified Products</h2>
+                <h2 className="whiteText">Highly Certified Products</h2>
               </div>
               <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
                 <div className="flex flex-col gap-2">
@@ -134,10 +134,10 @@ export default function Homepage() {
                 </div>
               </div>
               <div className="centerText2">
-                <h3>
+                <h3 className="whiteText">
                   Compliant with EPA and SNAP HFC-FREE Refrigerant Regulations
                 </h3>
-                <h4>
+                <h4 className="whiteText">
                   By maintaining the highest standards, we prove our commitment
                   to producing quality products our customers can rely on.
                 </h4>

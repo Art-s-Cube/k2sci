@@ -419,12 +419,12 @@ function Footer({menu}) {
         className={`grid footGrid py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-${
           itemsCount - 2
         }
-        bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
+        bg-primary bg-primary/5 dark:text-primary text-contrast overflow-hidden`}
       >
         <div className="footerLogo">
           <Link className="font-bold" to="/" prefetch="intent">
             <img
-              className="logoImage"
+              className="logoFooter"
               src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
               alt="K2Scientific"
             ></img>
@@ -434,7 +434,7 @@ function Footer({menu}) {
           <FooterMenu menu={menu} />
         </div>
       </Section>
-      <div className={`self-end pb-4 px-12 opacity-50 copyText`}>
+      <div className={`self-end pb-4 px-12 copyText bg-primary/5`}>
         &copy; {new Date().getFullYear()} / K2Scientific.
       </div>
     </>

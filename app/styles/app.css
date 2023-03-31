@@ -2808,6 +2808,11 @@ shop-pay-button {
   padding: 25px 5px;
   width: 100%;
 }
+.logoFooter{
+  width: 55%;
+  padding: 25px 0px;
+  margin-left: 15%;
+}
 .mobileLogo {
   padding: 15px 0px;
   width: 100%;
@@ -3067,16 +3072,21 @@ shop-pay-button {
 .certs {
   margin: 0px 33%;
 }
+.whiteText{
+  color: #ffffff;
+}
 .centerText {
   text-align: center;
   font-size: 40px;
-  margin-top: 7%;
   margin-bottom: 3%;
   padding-top: 4%;
   color: #000;
 }
 .w-bg {
   background: #fff;
+}
+.darkbg{
+  background-color: #68829d;
 }
 .centerText2 {
   text-align: center;
