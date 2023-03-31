@@ -16,6 +16,7 @@ function robotsTxtData({url}) {
 
   return `
 User-agent: *
+Allow: /
 Disallow: /admin
 Disallow: /cart
 Disallow: /orders
