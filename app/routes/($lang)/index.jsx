@@ -121,16 +121,28 @@ export default function Homepage() {
               </div>
               <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
                 <div className="flex flex-col gap-2">
-                  <img src="https://k2sci.com/content/images/iso_2015.png" />
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2015.png?v=1680291879"
+                    alt="ISO 9001"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <img src="https://k2sci.com/content/images/iso_2016.png" />
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2016.png?v=1680291889"
+                    alt="ISO 13485"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <img src="https://k2sci.com/content/images/iso_2004.png" />
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2004.png?v=1680291874"
+                    alt="ISO 14001"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <img src="https://k2sci.com/content/images/energy_star.png" />
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/energy_star.png?v=1680291865"
+                    alt="Energy Star"
+                  />
                 </div>
               </div>
               <div className="centerText2">

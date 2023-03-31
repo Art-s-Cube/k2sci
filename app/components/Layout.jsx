@@ -24,7 +24,6 @@ import {Suspense, useEffect, useMemo} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 
-
 export function Layout({children, layout}) {
   return (
     <>
@@ -256,11 +255,13 @@ function DesktopHeader({isHome, menu, openCart}) {
     >
       <div className="flex gap-12">
         <Link className="font-bold" to="/" prefetch="intent">
-          {<img
-            className="logoImage"
-            src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
-            alt="k2Sci"
-          ></img>}
+          {
+            <img
+              className="logoImage"
+              src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2-logo.svg"
+              alt="k2Sci"
+            ></img>
+          }
         </Link>
         <nav className="flex gap-8 main-navigation">
           {/* Top level menu items */}
@@ -470,9 +471,7 @@ function FooterMenu({menu}) {
           <Disclosure>
             {({open}) => (
               <>
-                <Link
-                to={item.to}
-                className="text-left">
+                <Link to={item.to} className="text-left">
                   <Heading className="flex justify-between" size="lead" as="h3">
                     {item.title}
                     {item?.items?.length > 0 && (
