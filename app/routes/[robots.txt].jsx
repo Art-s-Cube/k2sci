@@ -28,6 +28,7 @@ ${sitemapUrl ? `Sitemap: ${sitemapUrl}` : ''}
 
 # Google adsbot ignores robots.txt unless specifically named!
 User-agent: adsbot-google
+Allow: /
 Disallow: /checkouts/
 Disallow: /checkout
 Disallow: /carts
