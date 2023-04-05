@@ -132,14 +132,13 @@ function MenuMobileNav({menu, onClose}) {
 
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
-      {/* Top level menu items */}
       <ul>
         {(menu?.items || []).map((item) => (
           <li key={item.title} className="block">
             <span key={item.id} className="block">
               <Link
                 to={item.to}
-                onClick={() => handleItemClick(item)} // handle item click on button instead of link
+                onClick={() => handleItemClick(item)}
                 className={({isActive}) =>
                   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
                 }
@@ -148,25 +147,24 @@ function MenuMobileNav({menu, onClose}) {
                   {item.title}
                 </Text>
               </Link>
-              {(item.items || []).length > 0 &&
-                item === activeItem && ( // only show submenu if item is active
-                  <ul className="mobile-Sub absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
-                    {(item.items || []).map((subitem) => (
-                      <li key={subitem.title} className="submenu mobile">
-                        <Link
-                          key={subitem.id}
-                          to={subitem.to}
-                          target={subitem.target}
-                          prefetch="intent"
-                          onClick={onClose} // hide menu on submenu link click
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                        >
-                          {subitem.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              {(item.items || []).length > 0 && item === activeItem && (
+                <ul className="mobile-Sub absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
+                  {(item.items || []).map((subitem) => (
+                    <li key={subitem.title} className="submenu mobile">
+                      <Link
+                        key={subitem.id}
+                        to={subitem.to}
+                        target={subitem.target}
+                        prefetch="intent"
+                        onClick={onClose}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      >
+                        {subitem.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </span>
           </li>
         ))}
@@ -175,8 +173,6 @@ function MenuMobileNav({menu, onClose}) {
   );
 }
 function MobileHeader({isHome, openCart, openMenu}) {
-  // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
-
   const params = useParams();
 
   return (
@@ -281,26 +277,25 @@ function DesktopHeader({isHome, menu, openCart}) {
                   }
                 >
                   {item.title}
-
-                  {/* Submenu items */}
-                  {(item.items || []).length > 0 && (
-                    <ul className="sub-menu absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
-                      {(item.items || []).map((subitem) => (
-                        <li key={subitem.id} className="submenu">
-                          <Link
-                            key={subitem.id}
-                            to={subitem.to}
-                            target={subitem.target}
-                            prefetch="intent"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                          >
-                            {subitem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </Link>
+                {/* Submenu items */}
+                {(item.items || []).length > 0 && (
+                  <ul className="sub-menu absolute top-full left-0 mt-2 w-48 py-2 bg-white rounded-lg shadow-lg z-50">
+                    {(item.items || []).map((subitem) => (
+                      <li key={subitem.id} className="submenu">
+                        <Link
+                          key={subitem.id}
+                          to={subitem.to}
+                          target={subitem.target}
+                          prefetch="intent"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        >
+                          {subitem.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

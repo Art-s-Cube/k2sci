@@ -17,55 +17,51 @@ export function Hero1({
   top,
 }) {
   return (
-    <Link className="arrow">
-      <section
-        className={clsx(
-          'relative justify-end flex flex-col w-full max-h-half',
-          top && '-mt-nav',
-          height === 'full'
-            ? 'max-h-half'
-            : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]',
+    <section
+      className={clsx(
+        'relative justify-end flex flex-col w-full max-h-half',
+        top && '-mt-nav',
+        height === 'full'
+          ? 'max-h-half'
+          : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]',
+      )}
+    >
+      <div className="absolute inset-0 grid flex-grow pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
+        {spread?.reference && (
+          <div>
+            <SpreadMedia
+              scale={2}
+              sizes={
+                spreadSecondary?.reference
+                  ? '(min-width: 80em) 700px, (min-width: 48em) 450px, 500px'
+                  : '(min-width: 80em) 1400px, (min-width: 48em) 900px, 500px'
+              }
+              widths={
+                spreadSecondary?.reference ? [500, 450, 700] : [500, 900, 1400]
+              }
+              width={spreadSecondary?.reference ? 375 : 750}
+              data={spread.reference}
+              loading={loading}
+            />
+          </div>
         )}
-      >
-        <div className="absolute inset-0 grid flex-grow pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
-          {spread?.reference && (
-            <div>
-              <SpreadMedia
-                scale={2}
-                sizes={
-                  spreadSecondary?.reference
-                    ? '(min-width: 80em) 700px, (min-width: 48em) 450px, 500px'
-                    : '(min-width: 80em) 1400px, (min-width: 48em) 900px, 500px'
-                }
-                widths={
-                  spreadSecondary?.reference
-                    ? [500, 450, 700]
-                    : [500, 900, 1400]
-                }
-                width={spreadSecondary?.reference ? 375 : 750}
-                data={spread.reference}
-                loading={loading}
-              />
-            </div>
-          )}
-        </div>
-        <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
-          {heading?.value && (
-            <Heading format as="h2" size="display" className="max-w-md">
-              {heading.value}
-            </Heading>
-          )}
-          {byline?.value && (
-            <Text format width="narrow" as="p" size="lead">
-              {byline.value}
-            </Text>
-          )}
-          <Link to={`/collections/${handle}`} className="btn-default">
-            {cta?.value && <Text size="lead">{cta.value}</Text>}
-          </Link>
-        </div>
-      </section>
-    </Link>
+      </div>
+      <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
+        {heading?.value && (
+          <Heading format as="h2" size="display" className="max-w-md">
+            {heading.value}
+          </Heading>
+        )}
+        {byline?.value && (
+          <Text format width="narrow" as="p" size="lead">
+            {byline.value}
+          </Text>
+        )}
+        <Link to={`/collections/${handle}`} className="btn-default">
+          {cta?.value && <Text size="lead">{cta.value}</Text>}
+        </Link>
+      </div>
+    </section>
   );
 }
 

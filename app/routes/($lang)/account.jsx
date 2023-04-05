@@ -179,7 +179,7 @@ function Orders({orders}) {
   );
 }
 
-const CUSTOMER_QUERY = `#graphql
+const CUSTOMER_QUERY = `
   query CustomerDetails(
     $customerAccessToken: String!
     $country: CountryCode

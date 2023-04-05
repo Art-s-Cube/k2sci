@@ -217,6 +217,10 @@ shop-pay-button {
   opacity: 1;
   visibility: visible;
 }
+.navigation-box > li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
 .logoImage {
   padding: 25px 5px;
   width: 100%;

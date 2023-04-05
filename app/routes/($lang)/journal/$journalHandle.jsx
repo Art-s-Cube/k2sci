@@ -89,7 +89,7 @@ export default function Article() {
   );
 }
 
-const ARTICLE_QUERY = `#graphql
+const ARTICLE_QUERY = `
   query ArticleDetails(
     $language: LanguageCode
     $blogHandle: String!

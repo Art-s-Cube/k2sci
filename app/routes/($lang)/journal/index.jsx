@@ -98,7 +98,7 @@ function ArticleCard({blogHandle, article, loading}) {
   );
 }
 
-const BLOGS_QUERY = `#graphql
+const BLOGS_QUERY = `
 query Blog(
   $language: LanguageCode
   $blogHandle: String!

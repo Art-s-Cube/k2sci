@@ -512,7 +512,7 @@ function ProductSpecs({title, content, learnMore}) {
     </div>
   );
 }
-const PRODUCT_VARIANT_FRAGMENT = `#graphql
+const PRODUCT_VARIANT_FRAGMENT = `
   fragment ProductVariantFragment on ProductVariant {
     id
     availableForSale

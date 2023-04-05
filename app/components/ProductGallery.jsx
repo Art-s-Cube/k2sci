@@ -12,9 +12,6 @@ export function ProductGallery({media}) {
     <Carousel>
       {media.map((med, i) => {
         let mediaProps = {};
-        const isFirst = i === 0;
-        const isFourth = i === 3;
-        const isFullWidth = i % 3 === 0;
 
         const data = {
           ...med,

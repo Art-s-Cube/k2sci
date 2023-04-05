@@ -76,7 +76,7 @@ export default function Policies() {
   );
 }
 
-const POLICY_CONTENT_QUERY = `#graphql
+const POLICY_CONTENT_QUERY = `
   fragment Policy on ShopPolicy {
     body
     handle
