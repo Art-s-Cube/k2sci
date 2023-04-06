@@ -59,33 +59,36 @@ export default function Article() {
   const {title, image, contentHtml, author} = article;
 
   return (
-    <>
-      <PageHeader heading={title} variant="blogPost">
-        <span>
-          {formattedDate} &middot; {author.name}
-        </span>
-      </PageHeader>
-      <Section as="article" padding="x">
-        {image && (
-          <Image
-            data={image}
-            className="w-full mx-auto mt-8 md:mt-16 max-w-7xl"
-            sizes="90vw"
-            widths={[400, 800, 1200]}
-            width="100px"
-            loading={ATTR_LOADING_EAGER}
-            loaderOptions={{
-              scale: 2,
-              crop: 'center',
-            }}
+    <div className="justCent grid">
+      <div className="container">
+        <PageHeader heading={title} variant="blogPost">
+          <br></br>
+          <span>
+            {formattedDate} &middot; {author.name}
+          </span>
+        </PageHeader>
+        <Section as="article" padding="x">
+          {image && (
+            <Image
+              data={image}
+              className="w-full mx-auto mt-8 md:mt-16 max-w-7xl"
+              sizes="90vw"
+              widths={[400, 800, 1200]}
+              width="100px"
+              loading={ATTR_LOADING_EAGER}
+              loaderOptions={{
+                scale: 2,
+                crop: 'center',
+              }}
+            />
+          )}
+          <div
+            dangerouslySetInnerHTML={{__html: contentHtml}}
+            className="article"
           />
-        )}
-        <div
-          dangerouslySetInnerHTML={{__html: contentHtml}}
-          className="article"
-        />
-      </Section>
-    </>
+        </Section>
+      </div>
+    </div>
   );
 }
 
