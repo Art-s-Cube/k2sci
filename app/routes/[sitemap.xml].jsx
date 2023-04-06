@@ -114,7 +114,7 @@ function renderUrlTag({url, lastMod, changeFreq, image}) {
   `;
 }
 
-const SITEMAP_QUERY = `#graphql
+const SITEMAP_QUERY = `
   query sitemaps($urlLimits: Int, $language: LanguageCode)
   @inContext(language: $language) {
     products(
