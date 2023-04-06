@@ -73,7 +73,7 @@ function shopSitemap({data, baseUrl}) {
   const pagesData = flattenConnection(data.pages)
     .filter((page) => page.onlineStoreUrl)
     .map((page) => {
-      const url = `${baseUrl}/pages/${page.handle}`;
+      const url = `${baseUrl}/${page.handle}`;
 
       return {
         url,
