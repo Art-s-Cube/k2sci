@@ -142,7 +142,7 @@ export function ErrorBoundary({error}) {
   );
 }
 
-const LAYOUT_QUERY = `#graphql
+const LAYOUT_QUERY = `
   query layoutMenus(
     $language: LanguageCode
     $footerMenuHandle: String!
@@ -238,7 +238,7 @@ async function getLayoutData({storefront}) {
   return {shop: data.shop, headerMenu, footerMenu};
 }
 
-const CART_QUERY = `#graphql
+const CART_QUERY = `
   query CartQuery($cartId: ID!, $country: CountryCode, $language: LanguageCode)
     @inContext(country: $country, language: $language) {
     cart(id: $cartId) {

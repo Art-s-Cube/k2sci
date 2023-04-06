@@ -218,7 +218,7 @@ function article({article, url}) {
   return {
     title: article?.seo?.title ?? article?.title,
     description: truncate(article?.seo?.description ?? ''),
-    titleTemplate: '%s | Journal',
+    titleTemplate: '%s | News',
     url,
     media: {
       type: 'image',
