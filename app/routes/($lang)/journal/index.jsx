@@ -6,7 +6,7 @@ import {getImageLoadingPriority, PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_SHORT, routeHeaders} from '~/data/cache';
 
-const BLOG_HANDLE = 'Journal';
+const BLOG_HANDLE = 'News';
 
 export const headers = routeHeaders;
 
