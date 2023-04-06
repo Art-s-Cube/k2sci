@@ -60,7 +60,7 @@ function resolveToFromType(
         @see: https://shopify.dev/api/storefront/unstable/enums/MenuItemType
       */
   const defaultPrefixes = {
-    BLOG: 'blogs',
+    BLOG: 'news',
     COLLECTION: 'collections',
     COLLECTIONS: 'collections',
     FRONTPAGE: 'frontpage',
