@@ -156,16 +156,18 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      <Suspense fallback={<Skeleton className="h-32" />}>
-        <Await
-          errorElement="There was a problem loading related products"
-          resolve={recommended}
-        >
-          {(products) => (
-            <ProductSwimlane title="Related Products" products={products} />
-          )}
-        </Await>
-      </Suspense>
+      <Await
+        errorElement="There was a problem loading related products"
+        resolve={recommended}
+      >
+        {(products) => (
+          <ProductSwimlane
+            title="Related Products"
+            products={products.slice(0, 6)}
+            count="6"
+          />
+        )}
+      </Await>
     </>
   );
 }
@@ -627,7 +629,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `
 
 async function getRecommendedProducts(storefront, productId) {
   const products = await storefront.query(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: {productId, count: 12},
+    variables: {productId, count: 6},
   });
 
   invariant(products, 'No data returned from Shopify API');

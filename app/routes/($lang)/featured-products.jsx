@@ -40,7 +40,7 @@ const FEATURED_QUERY = `
         }
       }
     }
-    featuredProducts: products(first: 12) {
+    featuredProducts: products(first: 6) {
       nodes {
         ...ProductCard
       }
