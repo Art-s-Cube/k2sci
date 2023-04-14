@@ -492,7 +492,7 @@ function ProductDetails({title, content}) {
 }
 function ProductSpecs({title, content, learnMore}) {
   return (
-    <div className="flex">
+    <div className="specBox">
       <Text size="lead" as="h4">
         {title}
       </Text>

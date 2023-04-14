@@ -2786,6 +2786,11 @@ shop-pay-button {
 .main-navigation ul.navigation-box > li + li {
   margin-left: 30px;
 }
+@media (max-width: 1377px) and (min-width: 1024px) {
+  .main-navigation ul.navigation-box > li + li {
+  margin-left: 15px;
+}
+}
 .sub-menu {
   position: absolute;
   display: block;
