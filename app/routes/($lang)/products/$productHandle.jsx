@@ -235,7 +235,7 @@ export function ProductForm() {
           searchParamsWithDefaults={searchParamsWithDefaults}
         />
         {selectedVariant && (
-          <div className="grid items-stretch gap-4">
+          <div className="grid items-stretch gap-4 varPrice">
             <Money
               withoutTrailingZeros
               data={selectedVariant?.price}
