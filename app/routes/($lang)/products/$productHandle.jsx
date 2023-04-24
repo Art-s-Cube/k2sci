@@ -236,6 +236,19 @@ export function ProductForm() {
         />
         {selectedVariant && (
           <div className="grid items-stretch gap-4">
+            <Money
+              withoutTrailingZeros
+              data={selectedVariant?.price}
+              as="span"
+            />
+            {isOnSale && (
+              <Money
+                withoutTrailingZeros
+                data={selectedVariant?.compareAtPrice}
+                as="span"
+                className="opacity-50 strike"
+              />
+            )}
             {isOutOfStock ? (
               <Button variant="secondary" disabled>
                 <Text>Sold out</Text>
@@ -259,20 +272,7 @@ export function ProductForm() {
                   as="span"
                   className="flex items-center justify-center gap-2"
                 >
-                  <span>Add to Bag</span> <span>·</span>{' '}
-                  <Money
-                    withoutTrailingZeros
-                    data={selectedVariant?.price}
-                    as="span"
-                  />
-                  {isOnSale && (
-                    <Money
-                      withoutTrailingZeros
-                      data={selectedVariant?.compareAtPrice}
-                      as="span"
-                      className="opacity-50 strike"
-                    />
-                  )}
+                  <span>Add to Cart</span> <span>·</span>{' '}
                 </Text>
               </AddToCartButton>
             )}
