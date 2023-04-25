@@ -616,7 +616,8 @@ shop-pay-button {
   line-height: 17px;
 }
 .SpecBg .shop_attributes tbody tr td {
-  padding-left: 1%;
+  padding-left: 3%;
+  padding-right: 2%;
   line-height: 0.95em;
 }
 
