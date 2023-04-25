@@ -613,6 +613,7 @@ shop-pay-button {
 
 .SpecBg .shop_attributes tbody tr th {
   padding-left: 3%;
+  line-height: 17px;
 }
 .SpecBg .shop_attributes tbody tr td {
   padding-left: 1%;
@@ -638,7 +639,7 @@ td p {
   justify-content: center;
 }
 .floatingspec {
-  position: relative;
+  position: inherit;
   bottom: 10%;
 }
 .specifications .flex .text-lead {
