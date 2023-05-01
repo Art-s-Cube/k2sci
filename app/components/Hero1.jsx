@@ -19,7 +19,7 @@ export function Hero1({
   return (
     <section
       className={clsx(
-        'relative justify-end flex flex-col w-full max-h-half',
+        'relative justify-end flex flex-col w-full max-h-half spreadRef1',
         top && '-mt-nav',
         height === 'full'
           ? 'max-h-half'

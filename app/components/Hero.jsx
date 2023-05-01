@@ -20,7 +20,7 @@ export function Hero({
     <Link to={`/collections/${handle}`}>
       <section
         className={clsx(
-          'relative justify-end flex flex-col w-full',
+          'relative justify-end flex flex-col w-full spreadRef',
           top && '-mt-nav',
           height === 'full'
             ? 'h-screen'
@@ -31,7 +31,6 @@ export function Hero({
           {spread?.reference && (
             <div>
               <SpreadMedia
-                className="spreadRef"
                 scale={2}
                 sizes={
                   spreadSecondary?.reference
