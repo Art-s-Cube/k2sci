@@ -39,7 +39,7 @@ export function Hero1({
               widths={
                 spreadSecondary?.reference ? [500, 450, 700] : [500, 900, 1400]
               }
-              width={spreadSecondary?.reference ? 375 : 750}
+              width={spreadSecondary?.reference ? 1650 : 2300}
               data={spread.reference}
               loading={loading}
             />
