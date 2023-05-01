@@ -31,6 +31,7 @@ export function Hero({
           {spread?.reference && (
             <div>
               <SpreadMedia
+                className="spreadRef"
                 scale={2}
                 sizes={
                   spreadSecondary?.reference
