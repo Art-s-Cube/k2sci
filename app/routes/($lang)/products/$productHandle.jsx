@@ -1,4 +1,4 @@
-import {useRef, Suspense, useMemo} from 'react';
+import {useRef, useMemo} from 'react';
 import {Disclosure, Listbox} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
 import {
@@ -9,7 +9,7 @@ import {
   useTransition,
 } from '@remix-run/react';
 
-import {AnalyticsPageType, Money, ShopPayButton} from '@shopify/hydrogen';
+import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
   IconCaret,
@@ -104,7 +104,7 @@ export default function Product() {
 
   return (
     <>
-      <Section className="px-6 justCent">
+      <Section suppressHydrationWarning={true} className="px-6 justCent">
         <div className="grid container items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
