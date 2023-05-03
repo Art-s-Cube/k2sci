@@ -7,8 +7,6 @@ import {
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {HydrogenSession} from '~/lib/session.server';
 import {getLocaleFromRequest} from '~/lib/utils';
-React.dom.suppressHydrationWarning = true;
-
 
 /**
  * Export a fetch handler in module format.
