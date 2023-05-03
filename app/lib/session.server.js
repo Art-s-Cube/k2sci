@@ -15,7 +15,7 @@ export class HydrogenSession {
     const storage = createCookieSessionStorage({
       cookie: {
         name: 'session',
-        httpOnly: true,
+        httpOnly: false,
         path: '/',
         sameSite: 'lax',
         secrets,
