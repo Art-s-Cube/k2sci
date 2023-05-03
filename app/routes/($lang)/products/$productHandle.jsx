@@ -228,7 +228,7 @@ export function ProductForm() {
   };
 
   return (
-    <div className="grid gap-10">
+    <div suppressHydrationWarning={true} className="grid gap-10">
       <div className="grid gap-4">
         <ProductOptions
           options={product.options}
@@ -293,6 +293,7 @@ function ProductOptions({options, searchParamsWithDefaults}) {
           <div
             key={option.name}
             className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
+            suppressHydrationWarning={true}
           >
             <Heading as="legend" size="lead" className="min-w-[4rem]">
               {option.name}
@@ -417,6 +418,7 @@ function ProductOptionLink({
     <Link
       {...props}
       preventScrollReset
+      suppressHydrationWarning={true}
       prefetch="intent"
       replace
       to={`${path}?${clonedSearchParams.toString()}`}
@@ -428,7 +430,7 @@ function ProductOptionLink({
 
 function ProductDetail({title, content, learnMore}) {
   return (
-    <Disclosure key={title} as="div" className="grid w-full gap-2">
+    <Disclosure suppressHydrationWarning={true} key={title} as="div" className="grid w-full gap-2">
       {({open}) => (
         <>
           <Disclosure.Button className="text-left">
@@ -468,7 +470,7 @@ function ProductDetail({title, content, learnMore}) {
 }
 function ProductDetails({title, content}) {
   return (
-    <div key={title} className="grid w-full gap-2">
+    <div suppressHydrationWarning={true} key={title} className="grid w-full gap-2">
       <div className="text-left">
         <div className="flex justify-between">
           <Text size="lead" as="h4">
@@ -485,7 +487,7 @@ function ProductDetails({title, content}) {
 }
 function ProductSpecs({title, content, learnMore}) {
   return (
-    <div className="specBox">
+    <div suppressHydrationWarning={true} className="specBox">
       <Text size="lead" as="h4">
         {title}
       </Text>
