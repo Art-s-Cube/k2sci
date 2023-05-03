@@ -729,3 +729,4 @@ td p {
 .bgWhite {
   background-color: #ffffff;
 }
+.gridFix{grid-auto-rows: 30%;}

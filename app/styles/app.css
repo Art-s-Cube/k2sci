@@ -4301,3 +4301,4 @@ td p {
     padding-top: 0.5rem;
   }
 }
+.gridFix{grid-auto-rows: 30%;}

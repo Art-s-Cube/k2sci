@@ -104,7 +104,7 @@ export default function Product() {
   return (
     <>
       <Section className="px-6 justCent">
-        <div className="grid container items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid container gridFix items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
             className="w-screen md:w-full lg:col-span-2"
