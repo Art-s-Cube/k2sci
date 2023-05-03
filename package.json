@@ -15,7 +15,7 @@
   "prettier": "@shopify/prettier-config",
   "dependencies": {
     "@headlessui/react": "^1.7.2",
-    "@remix-run/react": "1.14.0",
+    "@remix-run/react": "1.15.0",
     "@remix-run/v1-route-convention": "^0.1.1",
     "@shopify/cli": "^3.23.0",
     "@shopify/cli-hydrogen": "^4.1.1",
