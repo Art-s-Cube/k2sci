@@ -2786,7 +2786,7 @@ shop-pay-button {
 .main-navigation ul.navigation-box > li + li {
   margin-left: 30px;
 }
-@media (max-width: 1377px) and (min-width: 1024px) {
+@media (max-width: 1377px) and (min-width: 1290px) {
   .main-navigation ul.navigation-box > li + li {
   margin-left: 15px;
 }
@@ -3164,9 +3164,11 @@ shop-pay-button {
 }
 .SpecBg .shop_attributes tbody tr th {
   padding-left: 3%;
+  line-height: 17px;
 }
 .SpecBg .shop_attributes tbody tr td {
-  padding-left: 1%;
+  padding-left: 3%;
+  padding-right: 2%;
   line-height: 0.95em;
 }
 .SpecBg .shop_attributes tbody tr:nth-child(even) {
@@ -3190,7 +3192,7 @@ td p {
   justify-content: center;
 }
 .floatingspec {
-  position: relative;
+  position: inherit;
   bottom: 10%;
 }
 .specifications .flex .text-lead {
@@ -3273,6 +3275,9 @@ td p {
 .footUl {
   padding: 17px 0px;
 }
+.varPrice{font-size: 27px}
+.varPrice button {width: 50%;}
+.bgWhite{background-color:#ffffff}
 @media (color-index: 48){
 
   .dark\:prose-invert{
@@ -4290,5 +4295,4 @@ td p {
     padding-top: 0.5rem;
   }
 }
-.varPrice{font-size:27px}
-.bgWhite{background-color:#ffffff}
+

@@ -197,8 +197,8 @@ shop-pay-button {
 }
 @media (max-width: 1377px) and (min-width: 1290px) {
   .main-navigation ul.navigation-box > li + li {
-  margin-left: 15px;
-}
+    margin-left: 15px;
+  }
 }
 .sub-menu {
   position: absolute;
@@ -720,7 +720,12 @@ td p {
 .footUl {
   padding: 17px 0px;
 }
-.varPrice{font-size: 27px}
-.varPrice button {width: 50%;}
-.bgWhite{background-color:#ffffff}
-
+.varPrice {
+  font-size: 27px;
+}
+.varPrice button {
+  width: 50%;
+}
+.bgWhite {
+  background-color: #ffffff;
+}
