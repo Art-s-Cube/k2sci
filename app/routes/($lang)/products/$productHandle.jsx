@@ -18,7 +18,6 @@ import {
   ProductGallery,
   ProductSwimlane,
   Section,
-  Skeleton,
   Text,
   Link,
   AddToCartButton,
@@ -104,7 +103,7 @@ export default function Product() {
 
   return (
     <>
-      <Section suppressHydrationWarning={true} className="px-6 justCent">
+      <Section className="px-6 justCent">
         <div className="grid container items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
@@ -228,7 +227,7 @@ export function ProductForm() {
   };
 
   return (
-    <div suppressHydrationWarning={true} className="grid gap-10">
+    <div className="grid gap-10">
       <div className="grid gap-4">
         <ProductOptions
           options={product.options}
@@ -293,7 +292,6 @@ function ProductOptions({options, searchParamsWithDefaults}) {
           <div
             key={option.name}
             className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
-            suppressHydrationWarning={true}
           >
             <Heading as="legend" size="lead" className="min-w-[4rem]">
               {option.name}
@@ -418,7 +416,6 @@ function ProductOptionLink({
     <Link
       {...props}
       preventScrollReset
-      suppressHydrationWarning={true}
       prefetch="intent"
       replace
       to={`${path}?${clonedSearchParams.toString()}`}
@@ -430,7 +427,7 @@ function ProductOptionLink({
 
 function ProductDetail({title, content, learnMore}) {
   return (
-    <Disclosure suppressHydrationWarning={true} key={title} as="div" className="grid w-full gap-2">
+    <Disclosure key={title} as="div" className="grid w-full gap-2">
       {({open}) => (
         <>
           <Disclosure.Button className="text-left">
@@ -470,7 +467,7 @@ function ProductDetail({title, content, learnMore}) {
 }
 function ProductDetails({title, content}) {
   return (
-    <div suppressHydrationWarning={true} key={title} className="grid w-full gap-2">
+    <div key={title} className="grid w-full gap-2">
       <div className="text-left">
         <div className="flex justify-between">
           <Text size="lead" as="h4">
@@ -487,7 +484,7 @@ function ProductDetails({title, content}) {
 }
 function ProductSpecs({title, content, learnMore}) {
   return (
-    <div suppressHydrationWarning={true} className="specBox">
+    <div className="specBox">
       <Text size="lead" as="h4">
         {title}
       </Text>
