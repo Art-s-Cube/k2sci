@@ -172,7 +172,7 @@ export default function Product() {
 }
 
 export function ProductForm() {
-  const {product, analytics, storeDomain} = useLoaderData();
+  const {product, analytics} = useLoaderData();
 
   const [currentSearchParams] = useSearchParams();
   const transition = useTransition();

@@ -51,11 +51,7 @@ export function SortFilter({
   );
 }
 
-export function FiltersDrawer({
-  filters = [],
-  appliedFilters = [],
-  collections = [],
-}) {
+export function FiltersDrawer({filters = [], appliedFilters = []}) {
   const [params] = useSearchParams();
   const location = useLocation();
 
@@ -87,21 +83,6 @@ export function FiltersDrawer({
         );
     }
   };
-
-  const collectionsMarkup = collections.map((collection) => {
-    return (
-      <li key={collection.handle} className="pb-4">
-        <Link
-          to={`/collections/${collection.handle}`}
-          className="focus:underline hover:underline"
-          key={collection.handle}
-          prefetch="intent"
-        >
-          {collection.title}
-        </Link>
-      </li>
-    );
-  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import {createCookieSessionStorage} from '@shopify/remix-oxygen';
+const {createCookieSessionStorage} = require('@shopify/remix-oxygen');
 
 /**
  * This is a custom session implementation for your Hydrogen shop.
@@ -6,8 +6,6 @@ import {createCookieSessionStorage} from '@shopify/remix-oxygen';
  * swap out the cookie-based implementation with something else!
  */
 export class HydrogenSession {
-  sessionStorage;
-  session;
   constructor(sessionStorage, session) {
     this.sessionStorage = sessionStorage;
     this.session = session;
