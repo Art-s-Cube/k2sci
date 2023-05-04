@@ -482,7 +482,7 @@ function ProductDetails({title, content}) {
     </div>
   );
 }
-function ProductSpecs({title, content, learnMore}) {
+function ProductSpecs({title, content}) {
   return (
     <div className="specBox">
       <Text size="lead" as="h4">
@@ -493,16 +493,6 @@ function ProductSpecs({title, content, learnMore}) {
         className="prose SpecBg"
         dangerouslySetInnerHTML={{__html: content}}
       />
-      {learnMore && (
-        <div className="">
-          <Link
-            className="pb-px border-b border-primary/30 text-primary/50"
-            to={learnMore}
-          >
-            Learn more
-          </Link>
-        </div>
-      )}
     </div>
   );
 }
