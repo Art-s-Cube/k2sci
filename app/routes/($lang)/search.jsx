@@ -1,6 +1,7 @@
 import {defer} from '@shopify/remix-oxygen';
 import {flattenConnection} from '@shopify/hydrogen';
 import {Await, Form, useLoaderData} from '@remix-run/react';
+import {Suspense} from 'react';
 import invariant from 'tiny-invariant';
 import {
   Heading,
@@ -97,23 +98,25 @@ export default function Search() {
               </Text>
             </Section>
           )}
-          <Await
-            errorElement="There was a problem loading related products"
-            resolve={noResultRecommendations}
-          >
-            {(data) => (
-              <>
-                <FeaturedCollections
-                  title="Trending Collections"
-                  collections={data.featuredCollections}
-                />
-                <ProductSwimlane
-                  title="Trending Products"
-                  products={data.featuredProducts}
-                />
-              </>
-            )}
-          </Await>
+          <Suspense>
+            <Await
+              errorElement="There was a problem loading related products"
+              resolve={noResultRecommendations}
+            >
+              {(data) => (
+                <>
+                  <FeaturedCollections
+                    title="Trending Collections"
+                    collections={data.featuredCollections}
+                  />
+                  <ProductSwimlane
+                    title="Trending Products"
+                    products={data.featuredProducts}
+                  />
+                </>
+              )}
+            </Await>
+          </Suspense>
         </>
       ) : (
         <Section>
