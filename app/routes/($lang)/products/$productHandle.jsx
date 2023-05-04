@@ -1,18 +1,10 @@
-import {useRef, useMemo, useTransition} from 'react';
-import {Disclosure, Listbox} from '@headlessui/react';
+import {useMemo, useTransition} from 'react';
+import {Disclosure} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
-import {
-  useLoaderData,
-  Await,
-  useSearchParams,
-  useLocation,
-} from '@remix-run/react';
-
+import {useLoaderData, Await, useSearchParams} from '@remix-run/react';
 import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
-  IconCaret,
-  IconCheck,
   IconClose,
   ProductGallery,
   ProductSwimlane,
@@ -28,7 +20,6 @@ import invariant from 'tiny-invariant';
 import clsx from 'clsx';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
-
 export const headers = routeHeaders;
 export async function loader({params, request, context}) {
   const {productHandle} = params;
@@ -94,12 +85,10 @@ export async function loader({params, request, context}) {
     },
   );
 }
-
 export default function Product() {
   const {product, shop, recommended} = useLoaderData();
   const {media, title, metafield, descriptionHtml} = product;
   const {shippingPolicy, refundPolicy} = shop;
-
   return (
     <>
       <Section className="px-6 justCent">
@@ -173,12 +162,6 @@ export function ProductForm() {
 
   const [currentSearchParams] = useSearchParams();
   const transition = useTransition();
-
-  /**
-   * We update `searchParams` with in-flight request data from `transition` (if available)
-   * to create an optimistic UI, e.g. check the product option before the
-   * request has completed.
-   */
   const searchParams = useMemo(() => {
     return transition.location
       ? new URLSearchParams(transition.location.search)
@@ -186,13 +169,6 @@ export function ProductForm() {
   }, [currentSearchParams, transition]);
 
   const firstVariant = product.variants.nodes[0];
-
-  /**
-   * We're making an explicit choice here to display the product options
-   * UI with a default variant, rather than wait for the user to select
-   * options first. Developers are welcome to opt-out of this behavior.
-   * By default, the first variant's options are used.
-   */
   const searchParamsWithDefaults = useMemo(() => {
     const clonedParams = new URLSearchParams(searchParams);
 
@@ -204,32 +180,19 @@ export function ProductForm() {
 
     return clonedParams;
   }, [searchParams, firstVariant.selectedOptions]);
-
-  /**
-   * Likewise, we're defaulting to the first variant for purposes
-   * of add to cart if there is none returned from the loader.
-   * A developer can opt out of this, too.
-   */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
     selectedVariant?.price?.amount < selectedVariant?.compareAtPrice?.amount;
-
   const productAnalytics = {
     ...analytics.products[0],
     quantity: 1,
   };
-
   return (
     <div className="grid gap-10">
       <div className="grid gap-4">
-        <ProductOptions
-          options={product.options}
-          searchParamsWithDefaults={searchParamsWithDefaults}
-        />
         {selectedVariant && (
           <div className="grid items-stretch gap-4 varPrice">
             <Money
@@ -278,150 +241,6 @@ export function ProductForm() {
     </div>
   );
 }
-
-function ProductOptions({options, searchParamsWithDefaults}) {
-  const closeRef = useRef(null);
-  return (
-    <>
-      {options
-        .filter((option) => option.values.length > 1)
-        .map((option) => (
-          <div
-            key={option.name}
-            className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
-          >
-            <Heading as="legend" size="lead" className="min-w-[4rem]">
-              {option.name}
-            </Heading>
-            <div className="flex flex-wrap items-baseline gap-4">
-              {/**
-               * First, we render a bunch of <Link> elements for each option value.
-               * When the user clicks one of these buttons, it will hit the loader
-               * to get the new data.
-               *
-               * If there are more than 7 values, we render a dropdown.
-               * Otherwise, we just render plain links.
-               */}
-              {option.values.length > 7 ? (
-                <div className="relative w-full">
-                  <Listbox>
-                    {({open}) => (
-                      <>
-                        <Listbox.Button
-                          ref={closeRef}
-                          className={clsx(
-                            'flex items-center justify-between w-full py-3 px-4 border border-primary',
-                            open
-                              ? 'rounded-b md:rounded-t md:rounded-b-none'
-                              : 'rounded',
-                          )}
-                        >
-                          <span>
-                            {searchParamsWithDefaults.get(option.name)}
-                          </span>
-                          <IconCaret direction={open ? 'up' : 'down'} />
-                        </Listbox.Button>
-                        <Listbox.Options
-                          className={clsx(
-                            'border-primary bg-contrast absolute bottom-12 z-30 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
-                            open ? 'max-h-48' : 'max-h-0',
-                          )}
-                        >
-                          {option.values.map((value) => (
-                            <Listbox.Option
-                              key={`option-${option.name}-${value}`}
-                              value={value}
-                            >
-                              {({active}) => (
-                                <ProductOptionLink
-                                  optionName={option.name}
-                                  optionValue={value}
-                                  className={clsx(
-                                    'text-primary w-full p-2 transition rounded flex justify-start items-center text-left cursor-pointer',
-                                    active && 'bg-primary/10',
-                                  )}
-                                  searchParams={searchParamsWithDefaults}
-                                  onClick={() => {
-                                    if (!closeRef?.current) return;
-                                    closeRef.current.click();
-                                  }}
-                                >
-                                  {value}
-                                  {searchParamsWithDefaults.get(option.name) ===
-                                    value && (
-                                    <span className="ml-2">
-                                      <IconCheck />
-                                    </span>
-                                  )}
-                                </ProductOptionLink>
-                              )}
-                            </Listbox.Option>
-                          ))}
-                        </Listbox.Options>
-                      </>
-                    )}
-                  </Listbox>
-                </div>
-              ) : (
-                <>
-                  {option.values.map((value) => {
-                    const checked =
-                      searchParamsWithDefaults.get(option.name) === value;
-                    const id = `option-${option.name}-${value}`;
-
-                    return (
-                      <Text key={id}>
-                        <ProductOptionLink
-                          optionName={option.name}
-                          optionValue={value}
-                          searchParams={searchParamsWithDefaults}
-                          className={clsx(
-                            'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
-                            checked ? 'border-primary/50' : 'border-primary/0',
-                          )}
-                        />
-                      </Text>
-                    );
-                  })}
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-    </>
-  );
-}
-
-function ProductOptionLink({
-  optionName,
-  optionValue,
-  searchParams,
-  children,
-  ...props
-}) {
-  const {pathname} = useLocation();
-  const isLangPathname = /\/[a-zA-Z]{2}-[a-zA-Z]{2}\//g.test(pathname);
-  // fixes internalized pathname
-  const path = isLangPathname
-    ? `/${pathname.split('/').slice(2).join('/')}`
-    : pathname;
-
-  const clonedSearchParams = new URLSearchParams(searchParams);
-  clonedSearchParams.set(optionName, optionValue);
-
-  return (
-    <Link
-      {...props}
-      preventScrollReset
-      prefetch="intent"
-      replace
-      to={`${path}?${clonedSearchParams.toString()}`}
-    >
-      {children ?? optionValue}
-    </Link>
-  );
-}
-
 function ProductDetail({title, content, learnMore}) {
   return (
     <Disclosure key={title} as="div" className="grid w-full gap-2">
