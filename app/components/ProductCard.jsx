@@ -55,7 +55,7 @@ export function ProductCard({
                 sizes="320px"
                 data={image}
                 alt={image.altText || `Picture of ${product.title}`}
-                loading={loading}
+                loading="lazy"
               />
             )}
             <Text
