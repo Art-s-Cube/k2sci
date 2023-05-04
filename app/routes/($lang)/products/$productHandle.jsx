@@ -1,4 +1,4 @@
-import {useRef, useMemo, useTransition, startTransition} from 'react';
+import {useRef, useMemo, useTransition} from 'react';
 import {Disclosure, Listbox} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
 import {
@@ -97,7 +97,7 @@ export async function loader({params, request, context}) {
 
 export default function Product() {
   const {product, shop, recommended} = useLoaderData();
-  const {media, title, descriptionHtml} = product;
+  const {media, title, metafield, descriptionHtml} = product;
   const {shippingPolicy, refundPolicy} = shop;
 
   return (
@@ -142,7 +142,15 @@ export default function Product() {
             </section>
           </div>
           <div className="grid items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-1 floatingspec">
-            <div className="specifications"></div>
+            <div className="specifications">
+              {metafield && (
+                <ProductSpecs
+                  title="Specifications"
+                  content={metafield.value}
+                  className="specs"
+                />
+              )}
+            </div>
           </div>
         </div>
       </Section>
@@ -473,7 +481,20 @@ function ProductDetails({title, content}) {
     </div>
   );
 }
+function ProductSpecs({title, content}) {
+  return (
+    <div className="specBox">
+      <Text size="lead" as="h4">
+        {title}
+      </Text>
 
+      <div
+        className="prose SpecBg"
+        dangerouslySetInnerHTML={{__html: content}}
+      />
+    </div>
+  );
+}
 const PRODUCT_VARIANT_FRAGMENT = `
   fragment ProductVariantFragment on ProductVariant {
     id
