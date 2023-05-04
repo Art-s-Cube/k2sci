@@ -6,7 +6,6 @@ import {
   useMatches,
   useOutlet,
 } from '@remix-run/react';
-import {Suspense} from 'react';
 import {
   Button,
   OrderCard,
@@ -118,22 +117,20 @@ function Account({customer, orders, heading, addresses, featuredData}) {
       <AccountDetails customer={customer} />
       <AccountAddressBook addresses={addresses} customer={customer} />
       {!orders.length && (
-        <Suspense>
-          <Await
-            resolve={featuredData}
-            errorElement="There was a problem loading featured products."
-          >
-            {(data) => (
-              <>
-                <FeaturedCollections
-                  title="Popular Collections"
-                  collections={data.featuredCollections}
-                />
-                <ProductSwimlane products={data.featuredProducts} />
-              </>
-            )}
-          </Await>
-        </Suspense>
+        <Await
+          resolve={featuredData}
+          errorElement="There was a problem loading featured products."
+        >
+          {(data) => (
+            <>
+              <FeaturedCollections
+                title="Popular Collections"
+                collections={data.featuredCollections}
+              />
+              <ProductSwimlane products={data.featuredProducts} />
+            </>
+          )}
+        </Await>
       )}
     </>
   );

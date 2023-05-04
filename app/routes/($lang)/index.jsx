@@ -1,5 +1,4 @@
 import {defer} from '@shopify/remix-oxygen';
-import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
 import {ProductSwimlane, FeaturedCollections, Hero1} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
@@ -96,90 +95,84 @@ export default function Homepage() {
       )}
 
       {featuredProducts && (
-        <Suspense>
-          <Await resolve={featuredProducts}>
-            {({products}) => {
-              if (!products?.nodes) return <></>;
-              return (
-                <ProductSwimlane
-                  products={products.nodes}
-                  title="Featured Products"
-                  count={4}
-                />
-              );
-            }}
-          </Await>
-        </Suspense>
+        <Await resolve={featuredProducts}>
+          {({products}) => {
+            if (!products?.nodes) return <></>;
+            return (
+              <ProductSwimlane
+                products={products.nodes}
+                title="Featured Products"
+                count={4}
+              />
+            );
+          }}
+        </Await>
       )}
       {Carousel && (
-        <Suspense>
-          <div className="justCent grid darkbg">
-            <div className="container">
-              <div className="centerText">
-                <h2 className="whiteText">Highly Certified Products</h2>
+        <div className="justCent grid darkbg">
+          <div className="container">
+            <div className="centerText">
+              <h2 className="whiteText">Highly Certified Products</h2>
+            </div>
+            <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
+              <div className="flex flex-col gap-2">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2015.png?v=1680291879"
+                  alt="ISO 9001"
+                  height="161"
+                  width="161"
+                />
               </div>
-              <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
-                <div className="flex flex-col gap-2">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2015.png?v=1680291879"
-                    alt="ISO 9001"
-                    height="161"
-                    width="161"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2016.png?v=1680291889"
-                    alt="ISO 13485"
-                    height="161"
-                    width="161"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2004.png?v=1680291874"
-                    alt="ISO 14001"
-                    height="161"
-                    width="161"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/energy_star.png?v=1680291865"
-                    alt="Energy Star"
-                    height="161"
-                    width="161"
-                  />
-                </div>
+              <div className="flex flex-col gap-2">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2016.png?v=1680291889"
+                  alt="ISO 13485"
+                  height="161"
+                  width="161"
+                />
               </div>
-              <div className="centerText2">
-                <h3 className="whiteText">
-                  Compliant with EPA and SNAP HFC-FREE Refrigerant Regulations
-                </h3>
-                <h4 className="whiteText">
-                  By maintaining the highest standards, we prove our commitment
-                  to producing quality products our customers can rely on.
-                </h4>
+              <div className="flex flex-col gap-2">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/iso_2004.png?v=1680291874"
+                  alt="ISO 14001"
+                  height="161"
+                  width="161"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/energy_star.png?v=1680291865"
+                  alt="Energy Star"
+                  height="161"
+                  width="161"
+                />
               </div>
             </div>
+            <div className="centerText2">
+              <h3 className="whiteText">
+                Compliant with EPA and SNAP HFC-FREE Refrigerant Regulations
+              </h3>
+              <h4 className="whiteText">
+                By maintaining the highest standards, we prove our commitment to
+                producing quality products our customers can rely on.
+              </h4>
+            </div>
           </div>
-        </Suspense>
+        </div>
       )}
 
       {featuredCollections && (
-        <Suspense>
-          <Await resolve={featuredCollections}>
-            {({collections}) => {
-              if (!collections?.nodes) return <></>;
-              return (
-                <FeaturedCollections
-                  collections={collections.nodes}
-                  title="Collections"
-                />
-              );
-            }}
-          </Await>
-        </Suspense>
+        <Await resolve={featuredCollections}>
+          {({collections}) => {
+            if (!collections?.nodes) return <></>;
+            return (
+              <FeaturedCollections
+                collections={collections.nodes}
+                title="Collections"
+              />
+            );
+          }}
+        </Await>
       )}
     </>
   );
