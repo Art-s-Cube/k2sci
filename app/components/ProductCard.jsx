@@ -52,13 +52,7 @@ export function ProductCard({
             {image && (
               <Image
                 className="object-contain fadeIn catprodw"
-                widths={[320]}
                 sizes="320px"
-                loaderOptions={{
-                  scale: 1,
-                  width: 320,
-                  height: 400,
-                }}
                 data={image}
                 alt={image.altText || `Picture of ${product.title}`}
                 loading={loading}

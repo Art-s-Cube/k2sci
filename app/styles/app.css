@@ -3284,6 +3284,7 @@ td p {
 .bgWhite {
   background-color: #ffffff;
 }
+.gridFix{grid-auto-rows: 30%;}
 @media (color-index: 48){
 
   .dark\:prose-invert{
@@ -4301,4 +4302,3 @@ td p {
     padding-top: 0.5rem;
   }
 }
-.gridFix{grid-auto-rows: 30%;}
