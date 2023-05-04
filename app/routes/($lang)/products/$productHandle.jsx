@@ -482,31 +482,16 @@ function ProductDetails({title, content}) {
   );
 }
 function ProductSpecs({title, content}) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isPending, startTransition] = useTransition({timeoutMs: 3000});
-
-  const toggleIsOpen = () => {
-    startTransition(() => {
-      setIsOpen(!isOpen);
-    });
-  };
-
   return (
     <div className="specBox">
       <Text size="lead" as="h4">
         {title}
       </Text>
 
-      <button onClick={toggleIsOpen}>Toggle</button>
-
-      {isOpen && (
-        <div
-          className="prose SpecBg"
-          dangerouslySetInnerHTML={{__html: content}}
-        />
-      )}
-
-      {isPending && <p>Loading...</p>}
+      <div
+        className="prose SpecBg"
+        dangerouslySetInnerHTML={{__html: content}}
+      />
     </div>
   );
 }
