@@ -2,10 +2,10 @@
   "compilerOptions": {
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "esModuleInterop": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "react-jsx",
     "noEmit": true,
     "resolveJsonModule": true,
