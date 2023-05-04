@@ -5,7 +5,7 @@ import {ProductSwimlane, FeaturedCollections, Hero1} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server';
 import {AnalyticsPageType} from '@shopify/hydrogen';
-import {routeHeaders, CACHE_SHORT} from '~/data/cache';
+import {routeHeaders, CACHE_SHORT, CACHE_NONE} from '~/data/cache';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
 
@@ -80,7 +80,7 @@ export async function loader({params, context}) {
     },
     {
       headers: {
-        'Cache-Control': CACHE_SHORT,
+        'Cache-Control': CACHE_NONE,
       },
     },
   );
