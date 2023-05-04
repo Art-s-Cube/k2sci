@@ -268,7 +268,7 @@ export function ProductForm() {
                   as="span"
                   className="flex items-center justify-center gap-2"
                 >
-                  <span>Add to Cart</span>
+                  Add to Cart
                 </Text>
               </AddToCartButton>
             )}
