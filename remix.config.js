@@ -15,5 +15,5 @@ module.exports = {
   serverDependenciesToBundle: 'all',
   serverModuleFormat: 'esm',
   serverPlatform: 'neutral',
-  serverMinify: true,
+  serverMinify: false,
 };
