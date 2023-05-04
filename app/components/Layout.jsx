@@ -14,13 +14,12 @@ import {
   IconCaret,
   Section,
   Cart,
-  CartLoading,
   Link,
 } from '~/components';
 import {useParams, Form, Await, useMatches} from '@remix-run/react';
 import {useWindowScroll} from 'react-use';
 import {Disclosure} from '@headlessui/react';
-import {Suspense, useEffect, useMemo} from 'react';
+import {useEffect, useMemo} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 
@@ -99,11 +98,9 @@ function CartDrawer({isOpen, onClose}) {
   return (
     <Drawer open={isOpen} onClose={onClose} heading="Cart" openFrom="right">
       <div className="grid">
-        <Suspense fallback={<CartLoading />}>
-          <Await resolve={root.data?.cart}>
-            {(cart) => <Cart layout="drawer" onClose={onClose} cart={cart} />}
-          </Await>
-        </Suspense>
+        <Await resolve={root.data?.cart}>
+          {(cart) => <Cart layout="drawer" onClose={onClose} cart={cart} />}
+        </Await>
       </div>
     </Drawer>
   );
@@ -350,17 +347,15 @@ function CartCount({isHome, openCart}) {
   const [root] = useMatches();
 
   return (
-    <Suspense fallback={<Badge count={0} dark={isHome} openCart={openCart} />}>
-      <Await resolve={root.data?.cart}>
-        {(cart) => (
-          <Badge
-            dark={isHome}
-            openCart={openCart}
-            count={cart?.totalQuantity || 0}
-          />
-        )}
-      </Await>
-    </Suspense>
+    <Await resolve={root.data?.cart}>
+      {(cart) => (
+        <Badge
+          dark={isHome}
+          openCart={openCart}
+          count={cart?.totalQuantity || 0}
+        />
+      )}
+    </Await>
   );
 }
 
@@ -492,15 +487,14 @@ function FooterMenu({menu}) {
                       open ? `max-h-48 h-fit` : `max-h-0 md:max-h-fit`
                     } overflow-hidden transition-all duration-300`}
                   >
-                    <Suspense data-comment="This suspense fixes a hydration bug in Disclosure.Panel with static prop">
-                      <Disclosure.Panel static>
-                        <nav className={styles.nav}>
-                          {item.items.map((subItem) => (
-                            <FooterLink key={subItem.id} item={subItem} />
-                          ))}
-                        </nav>
-                      </Disclosure.Panel>
-                    </Suspense>
+                    {' '}
+                    <Disclosure.Panel static>
+                      <nav className={styles.nav}>
+                        {item.items.map((subItem) => (
+                          <FooterLink key={subItem.id} item={subItem} />
+                        ))}
+                      </nav>
+                    </Disclosure.Panel>
                   </div>
                 ) : null}
               </>
