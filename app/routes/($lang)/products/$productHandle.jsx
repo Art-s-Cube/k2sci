@@ -143,13 +143,11 @@ export default function Product() {
           </div>
           <div className="grid items-start md:gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-1 floatingspec">
             <div className="specifications">
-              {metafield && (
-                <ProductSpecs
-                  title="Specifications"
-                  content={metafield.value}
-                  className="specs"
-                />
-              )}
+              <ProductSpecs
+                title="Specifications"
+                content={metafield.value}
+                className="specs"
+              />
             </div>
           </div>
         </div>
@@ -559,7 +557,7 @@ const PRODUCT_QUERY = `
           ...Media
         }
       }
-      variants(first: 1) {
+      variants(first: 3) {
         nodes {
           ...ProductVariantFragment
         }
