@@ -1,7 +1,7 @@
 import {useMemo, useTransition} from 'react';
 import {Disclosure} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
-import {useLoaderData, useSearchParams} from '@remix-run/react';
+import {useLoaderData, Await, useSearchParams} from '@remix-run/react';
 import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
@@ -141,13 +141,20 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      {(products) => (
-        <ProductSwimlane
-          title="Related Products"
-          products={products.slice(0, 6)}
-          count="6"
-        />
-      )}
+      <Await
+        errorElement="There was a problem loading related products"
+        resolve={recommended}
+      >
+        {(products) =>
+          products && products.length > 0 ? (
+            <ProductSwimlane
+              title="Related Products"
+              products={products.slice(0, 6)}
+              count="6"
+            />
+          ) : null
+        }
+      </Await>
     </>
   );
 }
