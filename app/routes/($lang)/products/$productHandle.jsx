@@ -141,18 +141,6 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      <Await
-        errorElement="There was a problem loading related products"
-        resolve={recommended}
-      >
-        {(products) => (
-          <ProductSwimlane
-            title="Related Products"
-            products={products.slice(0, 6)}
-            count="6"
-          />
-        )}
-      </Await>
     </>
   );
 }
