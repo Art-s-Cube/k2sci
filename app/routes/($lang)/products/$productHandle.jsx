@@ -1,7 +1,7 @@
 import {useMemo, useTransition} from 'react';
 import {Disclosure} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
-import {useLoaderData, Await, useSearchParams} from '@remix-run/react';
+import {useLoaderData, useSearchParams} from '@remix-run/react';
 import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
