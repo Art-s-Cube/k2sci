@@ -223,7 +223,6 @@ export function ProductForm() {
                   },
                 ]}
                 variant="primary"
-                className="addButton"
                 data-test="add-to-cart"
                 analytics={{
                   products: [productAnalytics],
