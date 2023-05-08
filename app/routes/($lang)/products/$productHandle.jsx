@@ -142,7 +142,7 @@ export default function Product() {
       </Section>
       {recommended && (
         <ProductSwimlane
-          title="Related Products"
+          title="Related Product"
           products={recommended.slice(0, 6)}
           count="6"
         />
