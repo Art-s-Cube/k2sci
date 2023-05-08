@@ -141,10 +141,7 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      <Await
-        errorElement="There was a problem loading related products"
-        resolve={recommended}
-      >
+      <Await>
         {(products) =>
           products && products.length > 0 ? (
             <ProductSwimlane
