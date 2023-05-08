@@ -729,3 +729,5 @@ td p {
   background-color: #ffffff;
 }
 .gridFix{grid-auto-rows: 30%;}
+.heroH1{color: #fff; -webkit-text-stroke: #000 1px;}
+.heroP{color:#fff}
