@@ -146,14 +146,12 @@ export default function Product() {
         resolve={recommended}
       >
         {(products) =>
-          products && products.length > 0 ? (
+          products(
             <ProductSwimlane
               title="Related Products"
               products={products.slice(0, 6)}
               count="6"
-            />
-          ) : (
-            <div></div>
+            />,
           )
         }
       </Await>
