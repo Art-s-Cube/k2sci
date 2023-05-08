@@ -3390,12 +3390,11 @@ td p {
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
     background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
     background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgb(var(--color-contrast) / 0.6);
+    background-color: rgba(250, 250, 249, 0.6);
   }
 
   .dark\:bg-primary{
