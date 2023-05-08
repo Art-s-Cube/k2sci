@@ -45,7 +45,6 @@ export async function loader({params, request, context}) {
     throw new Response(null, {status: 404});
   }
 
-  const recommended = getRecommendedProducts(context.storefront, product.id);
   const firstVariant = product.variants.nodes[0];
   const selectedVariant = product.selectedVariant ?? firstVariant;
 
@@ -63,7 +62,7 @@ export async function loader({params, request, context}) {
     selectedVariant,
     url: request.url,
   });
-
+  const recommended = getRecommendedProducts(context.storefront, product.id);
   return defer(
     {
       product,
@@ -141,15 +140,17 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      {(products) =>
-        products && products.length > 0 ? (
-          <ProductSwimlane
-            title="Related Products"
-            products={products.slice(0, 6)}
-            count="6"
-          />
-        ) : null
-      }
+      <section>
+        {(products) =>
+          products && products.length > 0 ? (
+            <ProductSwimlane
+              title="Related Products"
+              products={products.slice(0, 6)}
+              count="6"
+            />
+          ) : null
+        }
+      </section>
     </>
   );
 }
