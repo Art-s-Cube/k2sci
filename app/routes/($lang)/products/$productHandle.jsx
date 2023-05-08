@@ -140,15 +140,6 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      {(products) =>
-        products && (
-          <ProductSwimlane
-            title="Related Products"
-            products={recommended.slice(0, 6)}
-            count="6"
-          />
-        )
-      }
     </>
   );
 }
