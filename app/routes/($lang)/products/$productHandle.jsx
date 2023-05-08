@@ -1,7 +1,7 @@
 import {useMemo, useTransition} from 'react';
 import {Disclosure} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
-import {useLoaderData, useSearchParams} from '@remix-run/react';
+import {useLoaderData, useSearchParams, Await} from '@remix-run/react';
 import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
@@ -140,7 +140,10 @@ export default function Product() {
           </div>
         </div>
       </Section>
-      <section>
+      <Await
+        errorElement="There was a problem loading related products"
+        resolve={recommended}
+      >
         {(products) =>
           products && products.length > 0 ? (
             <ProductSwimlane
@@ -150,7 +153,7 @@ export default function Product() {
             />
           ) : null
         }
-      </section>
+      </Await>
     </>
   );
 }
