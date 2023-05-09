@@ -4,7 +4,7 @@
 
 /* Tokens */
 :root {
-  --color-contrast: 55,65,81; /* Text, buttons, etc. */
+  --color-contrast: 55, 65, 81; /* Text, buttons, etc. */
   --color-accent: 191 72 0; /* Labels like "On sale" */
   --font-size-fine: 0.75rem; /* text-xs */
   --font-size-copy: 1rem; /* text-base */
@@ -692,7 +692,7 @@ td p {
   float: left;
   padding: 0px 15px;
 }
-.footmen .max-h-0{
+.footmen .max-h-0 {
   margin-top: 5px;
   overflow: inherit;
 }
@@ -733,9 +733,24 @@ td p {
 .bgWhite {
   background-color: #ffffff;
 }
-.gridFix{grid-auto-rows: 30%;}
-.heroH1{color: #fff; -webkit-text-stroke: #000 1px;}
-.heroP{color:#fff}
-.productName{color:#1E3352}
-.varPrice button{background-color:#aec7d8; color: #274562}
-.varPrice button:hover{background-color:#274562; color: #aec7d8}
+.gridFix {
+  grid-auto-rows: 30%;
+}
+.heroH1 {
+  color: #fff;
+  -webkit-text-stroke: #000 1px;
+}
+.heroP {
+  color: #fff;
+}
+.productName {
+  color: #1e3352;
+}
+.varPrice button {
+  background-color: #aec7d8;
+  color: #274562;
+}
+.varPrice button:hover {
+  background-color: #274562;
+  color: #aec7d8;
+}
