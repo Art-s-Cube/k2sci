@@ -1,7 +1,6 @@
-import {useMemo, useTransition} from 'react';
 import {Disclosure} from '@headlessui/react';
 import {defer} from '@shopify/remix-oxygen';
-import {useLoaderData, useSearchParams} from '@remix-run/react';
+import {useLoaderData} from '@remix-run/react';
 import {AnalyticsPageType, Money} from '@shopify/hydrogen';
 import {
   Heading,
@@ -140,33 +139,20 @@ export default function Product() {
           </div>
         </div>
       </Section>
+      {recommended && (
+        <ProductSwimlane
+          title="Related Products"
+          products={recommended.slice(0, 6)}
+          count="6"
+        />
+      )}
     </>
   );
 }
 
 export function ProductForm() {
   const {product, analytics} = useLoaderData();
-
-  const [currentSearchParams] = useSearchParams();
-  const transition = useTransition();
-  const searchParams = useMemo(() => {
-    return transition.location
-      ? new URLSearchParams(transition.location.search)
-      : currentSearchParams;
-  }, [currentSearchParams, transition]);
-
   const firstVariant = product.variants.nodes[0];
-  const searchParamsWithDefaults = useMemo(() => {
-    const clonedParams = new URLSearchParams(searchParams);
-
-    for (const {name, value} of firstVariant.selectedOptions) {
-      if (!searchParams.has(name)) {
-        clonedParams.set(name, value);
-      }
-    }
-
-    return clonedParams;
-  }, [searchParams, firstVariant.selectedOptions]);
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
   const isOnSale =
