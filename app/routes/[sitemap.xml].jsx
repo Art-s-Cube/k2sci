@@ -1,8 +1,6 @@
 import {flattenConnection} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
-
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
-
 export async function loader({request, context: {storefront}}) {
   const data = await storefront.query(SITEMAP_QUERY, {
     variables: {
@@ -10,9 +8,7 @@ export async function loader({request, context: {storefront}}) {
       language: storefront.i18n.language,
     },
   });
-
   invariant(data, 'Sitemap data is missing');
-
   return new Response(
     shopSitemap({data, baseUrl: new URL(request.url).origin}),
     {
@@ -73,7 +69,7 @@ function shopSitemap({data, baseUrl}) {
   const pagesData = flattenConnection(data.pages)
     .filter((page) => page.onlineStoreUrl)
     .map((page) => {
-      const url = `${baseUrl}/${page.handle}`;
+      const url = `${baseUrl}/pages/${page.handle}`;
 
       return {
         url,
@@ -114,7 +110,7 @@ function renderUrlTag({url, lastMod, changeFreq, image}) {
   `;
 }
 
-const SITEMAP_QUERY = `
+const SITEMAP_QUERY = `#graphql
   query sitemaps($urlLimits: Int, $language: LanguageCode)
   @inContext(language: $language) {
     products(
