@@ -1,6 +1,6 @@
 {
   "name": "demo-store",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "scripts": {
     "build": "npm run build:css && shopify hydrogen build",

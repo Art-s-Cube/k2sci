@@ -556,7 +556,7 @@ select{
   body{
   border-color: rgb(var(--color-primary) / 0.1);
   --tw-bg-opacity: 1;
-  background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+  background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
   background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   color: rgb(var(--color-primary) / 0.9);
   -webkit-font-smoothing: antialiased;
@@ -2104,7 +2104,7 @@ select{
   border-style: none;
 }
 .border-contrast\/30{
-  border-color: rgba(250, 250, 249, 0.3);
+  border-color: rgb(55, 65, 81 / 0.3);
   border-color: rgb(var(--color-contrast) / 0.3);
 }
 .border-gray-200{
@@ -2141,15 +2141,15 @@ select{
 }
 .bg-contrast{
   --tw-bg-opacity: 1;
-  background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+  background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
   background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
 }
 .bg-contrast\/30{
-  background-color: rgba(250, 250, 249, 0.3);
+  background-color: rgb(55, 65, 81 / 0.3);
   background-color: rgb(var(--color-contrast) / 0.3);
 }
 .bg-contrast\/80{
-  background-color: rgba(250, 250, 249, 0.8);
+  background-color: rgb(55, 65, 81 / 0.8);
   background-color: rgb(var(--color-contrast) / 0.8);
 }
 .bg-green-100{
@@ -2158,22 +2158,22 @@ select{
 }
 .bg-primary{
   --tw-bg-opacity: 1;
-  background-color: rgb(var(250 250 249 / var(--tw-bg-opacity));
+  background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
 }
 .bg-primary\/10{
-  background-color: rgb(var(250 250 249) / 0.1);
+  background-color: rgb(var(--color-primary) / 0.1);
 }
 .bg-primary\/20{
-  background-color: rgb(var(250 250 249 / 0.2);
+  background-color: rgb(var(--color-primary) / 0.2);
 }
 .bg-primary\/40{
-  background-color: rgb(var(250 250 249 / 0.4);
+  background-color: rgb(var(--color-primary) / 0.4);
 }
 .bg-primary\/5{
-  background-color: rgb(250 250 249 / 0.05);
+  background-color: rgb(var(--color-primary) / 0.05);
 }
 .bg-primary\/80{
-  background-color: rgb(250 250 249 / 0.8);
+  background-color: rgb(var(--color-primary) / 0.8);
 }
 .bg-red-100{
   --tw-bg-opacity: 1;
@@ -2426,10 +2426,12 @@ select{
 }
 .text-contrast{
   --tw-text-opacity: 1;
-  color: rgba(55,65,81, var(--tw-text-opacity));
+  color: rgb(55, 65, 81 / var(--tw-text-opacity));
+  color: rgb(var(--color-contrast) / var(--tw-text-opacity));
 }
 .text-contrast\/90{
-  color: rgba(55,65,81, 0.9);
+  color: rgb(55, 65, 81 / 0.9);
+  color: rgb(var(--color-contrast) / 0.9);
 }
 .text-gray-700{
   --tw-text-opacity: 1;
@@ -2581,7 +2583,7 @@ select{
       top: 50%;
       transform: translateY(-50%);
       background: rgb(var(--color-primary));
-      box-shadow: 0.5px 0.5px 0px 0.5px rgb(250, 250, 249);
+      box-shadow: 0.5px 0.5px 0px 0.5px rgb(55, 65, 81);
       box-shadow: 0.5px 0.5px 0px 0.5px rgb(var(--color-contrast));
     }
 .card-image{
@@ -2638,8 +2640,8 @@ select{
      object-fit: contain;
 }
 /* Tokens */
-:root { /* Text, buttons, etc. */
-  --color-contrast: 250 250 249; /* Backgrounds, borders, etc. */
+:root {
+  --color-contrast: 55, 65, 81; /* Text, buttons, etc. */
   --color-accent: 191 72 0; /* Labels like "On sale" */
   --font-size-fine: 0.75rem; /* text-xs */
   --font-size-copy: 1rem; /* text-base */
@@ -3178,14 +3180,19 @@ td p {
   background-color: #ffffff !important;
 }
 .footmen {
-  display: inline-block;
-  padding: 11px 15px;
+  display: block;
+  float: left;
+  padding: 0px 15px;
+}
+.footmen .max-h-0 {
+  margin-top: 5px;
+  overflow: inherit;
 }
 .footGrid {
   grid-template-columns: auto auto !important;
 }
 .footGrid {
-  grid-template-rows: 75px;
+  grid-template-rows: auto;
 }
 .currencySelect {
   border: 1px solid #000 !important;
@@ -3210,7 +3217,7 @@ td p {
   text-align: center;
 }
 .footUl {
-  padding: 17px 0px;
+  padding: 0px;
 }
 .varPrice {
   font-size: 27px;
@@ -3221,7 +3228,27 @@ td p {
 .bgWhite {
   background-color: #ffffff;
 }
-.gridFix{grid-auto-rows: 30%;}
+.gridFix {
+  grid-auto-rows: 30%;
+}
+.heroH1 {
+  color: #fff;
+  -webkit-text-stroke: #000 1px;
+}
+.heroP {
+  color: #fff;
+}
+.productName {
+  color: #1e3352;
+}
+.varPrice button {
+  background-color: #aec7d8;
+  color: #274562;
+}
+.varPrice button:hover {
+  background-color: #274562;
+  color: #aec7d8;
+}
 @media (color-index: 48){
 
   .dark\:prose-invert{
@@ -3322,7 +3349,7 @@ td p {
   text-decoration-line: underline;
 }
 .focus\:border-contrast\/20:focus{
-  border-color: rgba(250, 250, 249, 0.2);
+  border-color: rgb(55, 65, 81 / 0.2);
   border-color: rgb(var(--color-contrast) / 0.2);
 }
 .focus\:border-primary\/20:focus{
@@ -3361,12 +3388,12 @@ td p {
 
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+    background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
     background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
+    background-color: rgb(55, 65, 81 / 0.6);
     background-color: rgb(var(--color-contrast) / 0.6);
   }
 
@@ -3387,7 +3414,8 @@ td p {
 
   .dark\:text-contrast{
     --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
+    color: rgb(55, 65, 81 / var(--tw-text-opacity));
+    color: rgb(var(--color-contrast) / var(--tw-text-opacity));
   }
 
   .dark\:text-primary{
@@ -3408,12 +3436,12 @@ td p {
 
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+    background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
     background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
+    background-color: rgb(55, 65, 81 / 0.6);
     background-color: rgb(var(--color-contrast) / 0.6);
   }
 
@@ -3434,7 +3462,8 @@ td p {
 
   .dark\:text-contrast{
     --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
+    color: rgb(55, 65, 81 / var(--tw-text-opacity));
+    color: rgb(var(--color-contrast) / var(--tw-text-opacity));
   }
 
   .dark\:text-primary{
@@ -3455,14 +3484,12 @@ td p {
 
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+    background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
     background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgba(250, 250, 249, 0.6);
+    background-color: rgb(55, 65, 81 / 0.6);
     background-color: rgb(var(--color-contrast) / 0.6);
   }
 
@@ -3483,7 +3510,8 @@ td p {
 
   .dark\:text-contrast{
     --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
+    color: rgb(55, 65, 81 / var(--tw-text-opacity));
+    color: rgb(var(--color-contrast) / var(--tw-text-opacity));
   }
 
   .dark\:text-primary{
@@ -3504,14 +3532,12 @@ td p {
 
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+    background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
     background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgba(250, 250, 249, 0.6);
+    background-color: rgb(55, 65, 81 / 0.6);
     background-color: rgb(var(--color-contrast) / 0.6);
   }
 
@@ -3532,105 +3558,8 @@ td p {
 
   .dark\:text-contrast{
     --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
-  }
-
-  .dark\:text-primary{
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-primary) / var(--tw-text-opacity));
-  }
-
-  .dark\:focus\:border-primary\/20:focus{
-    border-color: rgb(var(--color-primary) / 0.2);
-  }
-}
-@media (color-index: 48){
-
-  .dark\:border-white{
-    --tw-border-opacity: 1;
-    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-  }
-
-  .dark\:bg-contrast{
-    --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgb(var(--color-contrast) / 0.6);
-  }
-
-  .dark\:bg-primary{
-    --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-transparent{
-    background-color: transparent;
-  }
-
-  .dark\:from-contrast\/60{
-    --tw-gradient-from: rgb(var(--color-contrast) / 0.6) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(var(--color-contrast) / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
-  .dark\:text-contrast{
-    --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
-  }
-
-  .dark\:text-primary{
-    --tw-text-opacity: 1;
-    color: rgb(var(--color-primary) / var(--tw-text-opacity));
-  }
-
-  .dark\:focus\:border-primary\/20:focus{
-    border-color: rgb(var(--color-primary) / 0.2);
-  }
-}
-@media (color: 48842621){
-
-  .dark\:border-white{
-    --tw-border-opacity: 1;
-    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-  }
-
-  .dark\:bg-contrast{
-    --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
-    background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgba(250, 250, 249, 0.6);
-    background-color: rgb(var(--color-contrast) / 0.6);
-  }
-
-  .dark\:bg-primary{
-    --tw-bg-opacity: 1;
-    background-color: rgb(var(--color-primary) / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-transparent{
-    background-color: transparent;
-  }
-
-  .dark\:from-contrast\/60{
-    --tw-gradient-from: rgb(var(--color-contrast) / 0.6) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(var(--color-contrast) / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
-  .dark\:text-contrast{
-    --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
+    color: rgb(55, 65, 81 / var(--tw-text-opacity));
+    color: rgb(var(--color-contrast) / var(--tw-text-opacity));
   }
 
   .dark\:text-primary{
@@ -3651,12 +3580,12 @@ td p {
 
   .dark\:bg-contrast{
     --tw-bg-opacity: 1;
-    background-color: rgba(250, 250, 249, var(--tw-bg-opacity));
+    background-color: rgb(55, 65, 81 / var(--tw-bg-opacity));
     background-color: rgb(var(--color-contrast) / var(--tw-bg-opacity));
   }
 
   .dark\:bg-contrast\/60{
-    background-color: rgba(250, 250, 249, 0.6);
+    background-color: rgb(55, 65, 81 / 0.6);
     background-color: rgb(var(--color-contrast) / 0.6);
   }
 
@@ -3677,7 +3606,8 @@ td p {
 
   .dark\:text-contrast{
     --tw-text-opacity: 1;
-    color: rgba(55,65,81, var(--tw-text-opacity));
+    color: rgb(55, 65, 81 / var(--tw-text-opacity));
+    color: rgb(var(--color-contrast) / var(--tw-text-opacity));
   }
 
   .dark\:text-primary{
