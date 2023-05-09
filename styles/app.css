@@ -688,12 +688,17 @@ td p {
   background-color: #ffffff !important;
 }
 .footmen {
-  display: inline-block;
-  padding: 11px 15px;
+  display: block;
+  float: left;
+  padding: 0px 15px;
+}
+.footmen .max-h-0{
+  margin-top: 5px;
+  overflow: inherit;
 }
 .footGrid {
   grid-template-columns: auto auto !important;
-  grid-template-rows: 75px;
+  grid-template-rows: auto;
 }
 .currencySelect {
   width: auto;
@@ -717,7 +722,7 @@ td p {
   text-align: center;
 }
 .footUl {
-  padding: 17px 0px;
+  padding: 0px;
 }
 .varPrice {
   font-size: 27px;
