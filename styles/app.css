@@ -793,6 +793,9 @@ td p {
 .carousel.carousel-slider{
   max-width: 100%
 }
+.carousel-root .carousel{
+  width: 100%;
+}
 .thumbs .thumb {
   max-width: 20%;
   min-width: none;
