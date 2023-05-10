@@ -82,6 +82,7 @@ export default function App() {
           <Outlet />
         </Layout>
         <Scripts />
+        <Script src="//js.hs-scripts.com/7387985.js" />
       </body>
     </html>
   );
