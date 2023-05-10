@@ -26,7 +26,6 @@ export const meta = () => ({
 export const componentDidMount = () => {
   const script = document.createElement('script');
   script.src = './data/hubspot.js';
-  script.async = true;
   document.body.appendChild(script);
 };
 export const links = () => {
