@@ -764,7 +764,7 @@ td p {
   }
   .logoFooter {
     width: auto;
-    padding: 15px 0;
+    padding: 15px 0px;
     margin: 2% 10%;
   }
   .footerMenu {
@@ -772,14 +772,14 @@ td p {
     display: block;
   }
   .footUl {
-    padding: 0;
+    padding: 0px;
     display: block;
     height: -webkit-fill-available;
   }
   .footmen {
     display: block;
     float: left;
-    padding: 0 15px;
+    padding: 0px 15px;
     height: max-content;
     width: 33%;
   }
