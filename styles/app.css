@@ -803,4 +803,7 @@ td p {
   .justCent .gridFix {
     display: block;
   }
+  .grid-cols-2{
+        grid-template-columns: repeat(1,minmax(0,1fr));
+  }
 }
