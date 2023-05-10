@@ -828,9 +828,9 @@ td p {
     width: 85%;
     }
   }
-.footmen nav a:nth-child(odd) {
+#Policies nav a:nth-child(odd) {
   grid-column: 1 / 2;
 }
-.footmen nav a:nth-child(even) {
+#Policies nav a:nth-child(even) {
   grid-column: 2 / 2;
 }
