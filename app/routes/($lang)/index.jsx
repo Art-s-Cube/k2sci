@@ -243,7 +243,7 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `
   ${PRODUCT_CARD_FRAGMENT}
   query homepageFeaturedProducts($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    products(first: 4) {
+    products(first: 6) {
       nodes {
         ...ProductCard
       }
