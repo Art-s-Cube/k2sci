@@ -140,7 +140,7 @@ function MenuMobileNav({menu, onClose}) {
                 to={item.to}
                 onClick={() => handleItemClick(item)}
                 className={({isActive}) =>
-                  isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+                  isActive ? 'pb-1 -mb-px' : 'pb-1'
                 }
               >
                 <Text as="span" size="copy">
