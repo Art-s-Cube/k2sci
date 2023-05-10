@@ -8,6 +8,7 @@ import {
   useLoaderData,
   useMatches,
 } from '@remix-run/react';
+import {Hubspot} from '../app/data/hubspot'
 import {ShopifySalesChannel, Seo} from '@shopify/hydrogen';
 import {Layout} from '~/components';
 import {GenericError} from './components/GenericError';
@@ -82,7 +83,7 @@ export default function App() {
           <Outlet />
         </Layout>
         <Scripts />
-        <Script src="//js.hs-scripts.com/7387985.js" />
+        <Hubspot />
       </body>
     </html>
   );
