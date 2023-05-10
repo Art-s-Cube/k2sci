@@ -811,6 +811,16 @@ td p {
   .grid-cols-2{
         grid-template-columns: repeat(1,minmax(0,1fr));
   }
+  .fixed .absolute .max-w-full {
+   max-width: 350px; 
+  }
+  .fixed .absolute .flex .bgWhite .grid nav {
+    padding: 0px !Important;
+  }
+  .fixed .absolute .flex .bgWhite .grid nav li {
+    padding: 5% 10%;
+    border-top: 1px solid #69829d;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
   .navigation-box .relative {
