@@ -446,7 +446,7 @@ function Footer({menu}) {
 function FooterLink({item}) {
   if (item.to.startsWith('http')) {
     return (
-      <a href={item.to} target={item.target} rel="noopener noreferrer">
+      <a href={item.to} target={item.target} rel="noopener noreferrer"  className="{item.title}">
         {item.title}
       </a>
     );
@@ -496,7 +496,7 @@ function FooterMenu({menu}) {
                       <Disclosure.Panel static>
                         <nav className={styles.nav}>
                           {item.items.map((subItem) => (
-                            <FooterLink className="footerSub" key={subItem.id} item={subItem} />
+                            <FooterLink key={subItem.id} item={subItem} />
                           ))}
                         </nav>
                       </Disclosure.Panel>
