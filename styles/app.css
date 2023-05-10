@@ -808,14 +808,14 @@ td p {
   }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
-  .main-navigation ul.navigation-box>li+li {
+  .navigation-box .relative {
     margin-left: 15px;
-  } 
+  }
   .min-h-screen .gap-8 {
   gap: 0rem;
   }
   .h-nav .gap-12 {
-   gap: 2rem; 
+   gap: 2rem;
    min-width: 76%;
   }
   .h-nav .gap-12 .font-bold {
