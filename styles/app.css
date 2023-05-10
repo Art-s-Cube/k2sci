@@ -771,7 +771,7 @@ td p {
     height: auto;
     display:block;
   }
-  footUl {
+  .footUl {
     padding: 0;
     display: block;
     position: absolute;
