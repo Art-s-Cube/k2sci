@@ -790,4 +790,15 @@ td p {
   height: fit-content;
   max-height: fit-content;
 }
+.carousel.carousel-slider{
+  max-width: 100%
+}
+.thumbs .thumb {
+  max-width: 20%;
+  min-width: none;
+  float: left;
+}
+.justCent .gridFix {
+  display: block;
+}
 }
