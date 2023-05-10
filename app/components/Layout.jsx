@@ -446,7 +446,7 @@ function Footer({menu}) {
 function FooterLink({item}) {
   if (item.to.startsWith('http')) {
     return (
-      <a href={item.to} target={item.target} rel="noopener noreferrer"  className="{item.title}">
+      <a href={item.to} target={item.target} rel="noopener noreferrer"  className={item.title}>
         {item.title}
       </a>
     );
