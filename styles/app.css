@@ -821,6 +821,10 @@ td p {
     padding: 5% 10%;
     border-top: 1px solid #69829d;
   }
+  .mobile-Sub .submenu {
+   border: none;
+    padding: 3%;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
   .navigation-box .relative {
