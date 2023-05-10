@@ -754,3 +754,35 @@ td p {
   background-color: #274562;
   color: #aec7d8;
 }
+@media screen and (max-width: 500px) {
+  .footGrid {
+    grid-template-columns: inherit !important;
+  }
+  .logoFooter {
+    width: auto;
+    padding: 15px 0;
+    margin: 2% 10%;
+  }
+  .footerMenu{
+    height: auto;
+    display:block;
+  }
+  footUl {
+    padding: 0;
+    display: block;
+    position: absolute;
+    height: -webkit-fill-available;
+  }
+  .footmen {
+    display: block;
+    float: left;
+    padding: 0 15px;
+    height: max-content;
+}
+.footmen .max-h-0 {
+  margin-top: 5px;
+  overflow: inherit;
+  height: fit-content;
+  max-height: fit-content;
+}
+}
