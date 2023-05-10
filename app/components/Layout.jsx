@@ -496,7 +496,7 @@ function FooterMenu({menu}) {
                       <Disclosure.Panel static>
                         <nav className={styles.nav}>
                           {item.items.map((subItem) => (
-                            <FooterLink key={subItem.id} item={subItem} />
+                            <FooterLink className="footerSub" key={subItem.id} item={subItem} />
                           ))}
                         </nav>
                       </Disclosure.Panel>
