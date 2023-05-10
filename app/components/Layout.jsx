@@ -222,7 +222,7 @@ function MobileHeader({isHome, openCart, openMenu}) {
       >
         <img
           className="mobileLogo"
-          src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683745330"
+          src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619"
           alt="k2Sci"
           width="98"
           height="17"
@@ -256,7 +256,7 @@ function DesktopHeader({isHome, menu, openCart}) {
           {
             <img
               className="logoImage"
-              src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683745330"
+              src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619"
               alt="k2Sci"
               width="310"
               height="85"
@@ -425,7 +425,7 @@ function Footer({menu}) {
           <Link className="font-bold" to="/" prefetch="intent">
             <img
               className="logoFooter"
-              src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683745330"
+              src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619"
               alt="K2Scientific"
               width="383"
               height="44"
