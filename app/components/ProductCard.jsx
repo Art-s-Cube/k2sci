@@ -68,7 +68,7 @@ export function ProductCard({
           </div>
           <div className="grid gap-1">
             <Text
-              className="w-full overflow-hidden whitespace-nowrap text-ellipsis "
+              className="w-full overflow-hidden text-ellipsis "
               as="h3"
             >
               {product.title}
