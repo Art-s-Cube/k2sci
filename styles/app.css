@@ -734,7 +734,7 @@ td p {
   background-color: #ffffff;
 }
 .gridFix {
-  grid-auto-rows: 30%;
+  grid-auto-rows: 50%;
 }
 .heroH1 {
   color: #fff;
