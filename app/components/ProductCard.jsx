@@ -27,7 +27,7 @@ export function ProductCard({
   } else if (isDiscounted(price, compareAtPrice)) {
     cardLabel = 'Sale';
   } else if (isNewArrival(product.publishedAt)) {
-    cardLabel = 'New';
+    cardLabel = '';
   }
 
   const productAnalytics = {
