@@ -98,25 +98,7 @@ export default function Search() {
               </Text>
             </Section>
           )}
-          <Suspense>
-            <Await
-              errorElement="There was a problem loading related products"
-              resolve={noResultRecommendations}
-            >
-              {(data) => (
-                <>
-                  <FeaturedCollections
-                    title="Trending Collections"
-                    collections={data.featuredCollections}
-                  />
-                  <ProductSwimlane
-                    title="Trending Products"
-                    products={data.featuredProducts}
-                  />
-                </>
-              )}
-            </Await>
-          </Suspense>
+          
         </>
       ) : (
         <Section>
