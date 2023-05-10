@@ -755,6 +755,10 @@ td p {
   color: #aec7d8;
 }
 @media screen and (max-width: 500px) {
+  .heroH1{
+    font-size: 2.5rem;
+    max-width: 100%;
+  }
   .footGrid {
     grid-template-columns: inherit !important;
   }
