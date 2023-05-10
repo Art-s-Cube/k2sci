@@ -273,7 +273,7 @@ function DesktopHeader({isHome, menu, openCart}) {
                   target={item.target}
                   prefetch="intent"
                   className={({isActive}) =>
-                    isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+                    isActive ? 'pb-1 -mb-px' : 'pb-1'
                   }
                 >
                   {item.title}
