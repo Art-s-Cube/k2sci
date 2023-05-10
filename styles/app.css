@@ -818,12 +818,11 @@ td p {
    gap: 2rem; 
    min-width: 76%;
   }
-  .h-nav .gap-12 .font-bold{
+  .h-nav .gap-12 .font-bold {
     max-width: 35%;
   }
-  .logoImage{
+  .logoImage {
     padding: 33px 5px;
     width: 85%;
     }
   }
-}
