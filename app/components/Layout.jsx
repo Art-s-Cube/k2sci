@@ -111,7 +111,7 @@ function CartDrawer({isOpen, onClose}) {
 
 export function MenuDrawer({isOpen, onClose, menu}) {
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading="Menu">
+    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading={<img src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619" alt="Menu" width="150" />}>
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
       </div>
