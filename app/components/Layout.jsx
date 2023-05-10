@@ -468,7 +468,7 @@ function FooterMenu({menu}) {
   return (
     <ul className="footUl">
       {(menu?.items || []).map((item) => (
-        <li key={item.id} className="footmen">
+        <li key={item.id} className="footmen" id={item.title} >
           <Disclosure>
             {({open}) => (
               <>
