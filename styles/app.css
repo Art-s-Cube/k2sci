@@ -828,6 +828,9 @@ td p {
     width: 85%;
     }
   }
+#Policies nav {
+  grid-column-gap: 2rem;
+}
 #Policies nav a:nth-child(odd) {
   grid-column: 1 / 2;
 }
