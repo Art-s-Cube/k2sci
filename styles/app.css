@@ -821,9 +821,9 @@ td p {
     padding: 5% 10%;
     border-top: 1px solid #69829d;
   }
-  .mobile-Sub .submenu {
-   border: none;
-    padding: 3%;
+  .fixed .absolute .flex .bgWhite .grid nav li .mobile-Sub .submenu {
+   border-top: 0px;
+   padding: 3%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
