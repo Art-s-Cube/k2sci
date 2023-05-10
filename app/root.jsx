@@ -18,11 +18,17 @@ import {seoPayload} from '~/lib/seo.server';
 import {DEFAULT_LOCALE, parseMenu} from './lib/utils';
 import invariant from 'tiny-invariant';
 import {useAnalytics} from './hooks/useAnalytics';
+import HubSpotEmbed from './data/hubspot';
 export const meta = () => ({
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
 });
-
+export const componentDidMount = () => {
+  const script = document.createElement('script');
+  script.src = './data/hubspot.js';
+  script.async = true;
+  document.body.appendChild(script);
+};
 export const links = () => {
   return [
     {rel: 'stylesheet', href: styles},
@@ -73,6 +79,7 @@ export default function App() {
         <Meta />
         <Seo />
         <Links />
+        <HubSpotEmbed />
       </head>
       <body>
         <Layout

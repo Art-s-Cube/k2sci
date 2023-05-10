@@ -1,22 +1,16 @@
 import React from 'react';
 
-const Hubspot = () => {
-  return (
-    <>
-      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7387985.js"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            hs.beacon.ready(function() {
-              hs.beacon.identify({
-                ...
-              });
-            });
-          `,
-        }}
-      />
-    </>
-  );
-};
+class HubSpotEmbed extends React.Component {
+  componentDidMount() {
+    const script = document.createElement('script');
+    script.src = '//js.hs-scripts.com/7387985.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }
 
-export default Hubspot;​
+  render() {
+    return <div></div>;
+  }
+}
+
+export default HubSpotEmbed;

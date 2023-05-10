@@ -755,7 +755,7 @@ td p {
   color: #aec7d8;
 }
 @media screen and (max-width: 500px) {
-  .heroH1{
+  .heroH1 {
     font-size: 2.5rem;
     max-width: 100%;
   }
@@ -767,14 +767,13 @@ td p {
     padding: 15px 0;
     margin: 2% 10%;
   }
-  .footerMenu{
+  .footerMenu {
     height: auto;
-    display:block;
+    display: block;
   }
   .footUl {
     padding: 0;
     display: block;
-    position: absolute;
     height: -webkit-fill-available;
   }
   .footmen {
@@ -783,25 +782,25 @@ td p {
     padding: 0 15px;
     height: max-content;
     width: 33%;
-}
-.footmen .max-h-0 {
-  margin-top: 5px;
-  overflow: inherit;
-  height: fit-content;
-  max-height: fit-content;
-}
-.carousel.carousel-slider{
-  max-width: 100%
-}
-.carousel-root .carousel{
-  width: 100%;
-}
-.thumbs .thumb {
-  max-width: 20%;
-  min-width: 20%;
-  float: left;
-}
-.justCent .gridFix {
-  display: block;
-}
+  }
+  .footmen .max-h-0 {
+    margin-top: 5px;
+    overflow: inherit;
+    height: fit-content;
+    max-height: fit-content;
+  }
+  .carousel.carousel-slider {
+    max-width: 100%;
+  }
+  .carousel-root .carousel {
+    width: 100%;
+  }
+  .thumbs .thumb {
+    max-width: 20%;
+    min-width: 20%;
+    float: left;
+  }
+  .justCent .gridFix {
+    display: block;
+  }
 }
