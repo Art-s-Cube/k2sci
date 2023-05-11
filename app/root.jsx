@@ -39,7 +39,7 @@ export const links = () => {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {rel: 'icon', type: 'image/x-icon', href: "https://cdn.shopify.com/s/files/1/0736/6298/8599/files/faviconK2.ico"},
   ];
 };
 
