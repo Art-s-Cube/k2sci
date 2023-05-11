@@ -829,6 +829,9 @@ td p {
    border-top: 0px;
    padding: 3%;
   }
+  .featProd h2 {
+   text-align: center; 
+  }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
   .navigation-box .relative {
