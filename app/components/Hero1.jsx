@@ -46,7 +46,7 @@ export function Hero1({
           </div>
         )}
       </div>
-      <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
+      <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast heroTextPos">
         {heading?.value && (
           <Heading format as="h1" size="display" className="max-w-md heroH1">
             {heading.value}
