@@ -18,7 +18,7 @@ import {seoPayload} from '~/lib/seo.server';
 import {DEFAULT_LOCALE, parseMenu} from './lib/utils';
 import invariant from 'tiny-invariant';
 import {useAnalytics} from './hooks/useAnalytics';
-import {HubSpotEmbed} from './data/hubspot';
+import HubSpotEmbed from './data/hubspot';
 export const meta = () => ({
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
