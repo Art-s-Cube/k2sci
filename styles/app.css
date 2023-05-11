@@ -195,6 +195,10 @@ shop-pay-button {
 .main-navigation ul.navigation-box > li + li {
   margin-left: 30px;
 }
+.main-navigation .navigation-box .relative a {
+  color: #000;
+  font-weight: 600;
+}
 @media (max-width: 1377px) and (min-width: 1290px) {
   .main-navigation ul.navigation-box > li + li {
     margin-left: 15px;
@@ -742,6 +746,7 @@ td p {
 }
 .heroP {
   color: #fff;
+  font-weight: 400;
 }
 .productName {
   color: #1e3352;
