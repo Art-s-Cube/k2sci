@@ -854,3 +854,6 @@ td p {
 #Policies nav a:nth-child(even) {
   grid-column: 2 / 2;
 }
+.featProd h2 {
+  text-align: right;
+}
