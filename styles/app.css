@@ -836,6 +836,19 @@ td p {
    text-align: center; 
   }
 }
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .gridFix {
+    grid-auto-rows: 24%;
+  } 
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gridFix {
+    grid-auto-rows: 20%;
+  } 
+  .floatingspec {
+    grid-template-columns: repeat(1,minmax(0,1fr));
+  }
+}
 @media (min-width: 1024px) and (max-width: 1230px) {
   .navigation-box .relative {
     margin-left: 15px;
