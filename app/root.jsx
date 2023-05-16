@@ -1,3 +1,4 @@
+import {Helmet} from 'react-helmet';
 import {defer} from '@shopify/remix-oxygen';
 import {
   Links,
@@ -79,6 +80,24 @@ export default function App() {
         <Meta />
         <Seo />
         <Links />
+        <Helmet>
+          <script
+            async
+            src='https://www.googletagmanager.com/gtag/js?id=G-KKJFP4WYF2'
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KKJFP4WYF2', {
+            page_path: window.location.pathname,
+          });
+          `,
+            }}
+          />
+        </Helmet>
       </head>
       <body>
         <Layout
