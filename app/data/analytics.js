@@ -3,7 +3,7 @@ import React from 'react';
 class AnalyticsEmbed extends React.Component {
   componentDidMount() {
     const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-KKJFP4WYF2';
+    script.src = '//www.googletagmanager.com/gtag/js?id=G-KKJFP4WYF2';
     script.async = true;
     document.body.appendChild(script);
 
