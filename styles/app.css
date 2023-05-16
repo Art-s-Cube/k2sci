@@ -764,6 +764,7 @@ td p {
 }
 .featProd h2 {
   text-align: left;
+  padding: 0px;
 }
 @media screen and (max-width: 500px) {
   .heroH1 {
