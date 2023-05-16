@@ -764,7 +764,6 @@ td p {
 }
 .featProd h2 {
   text-align: left;
-  margin: auto;
 }
 @media screen and (max-width: 500px) {
   .heroH1 {
@@ -836,7 +835,7 @@ td p {
    padding: 3%;
   }
   .featProd h2 {
-   text-align: center; 
+   text-align: left; 
   }
 }
 @media (min-width: 1024px) and (max-width: 1400px) {
