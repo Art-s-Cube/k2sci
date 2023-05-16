@@ -10,13 +10,13 @@ export function ProductSwimlane({
 }) {
   return (
     <Section heading={title} padding="y" className="featProd container" {...props}>
-      <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12 justCent">
+      <div className="grid-flow-row grid gap-2 gap-y-6 md:gap-4 lg:gap-6 grid-cols-1 false  false md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductCard
             product={product}
             key={product.id}
             count={count}
-            className="snap-start w-80"
+            className=""
           />
         ))}
       </div>
