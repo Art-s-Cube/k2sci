@@ -76,7 +76,6 @@ export default function App() {
   return (
     <html lang={locale.language}>
       <head>
-        <analyticsEmbed />
         <Meta />
         <Seo />
         <Links />
@@ -89,6 +88,7 @@ export default function App() {
           <Outlet />
         </Layout>
         <Scripts />
+        <analyticsEmbed />
          <HubSpotEmbed />
       </body>
     </html>
