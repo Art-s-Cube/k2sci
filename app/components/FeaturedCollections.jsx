@@ -12,7 +12,7 @@ export function FeaturedCollections({
   const items = collections.filter((item) => item.image).length;
 
   return (
-    <Section {...props} heading={title}>
+    <Section {...props} heading={title} className="featProd container">
       <Grid items={items}>
         {collections.map((collection) => {
           if (!collection?.image) {
