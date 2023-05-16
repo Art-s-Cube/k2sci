@@ -88,8 +88,8 @@ export default function App() {
           <Outlet />
         </Layout>
         <Scripts />
-        <analyticsEmbed />
          <HubSpotEmbed />
+         <analyticsEmbed />
       </body>
     </html>
   );
