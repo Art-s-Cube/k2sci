@@ -7,12 +7,15 @@ class AnalyticsEmbed extends React.Component {
     script.async = true;
     document.body.appendChild(script);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-KKJFP4WYF2');
+    const analyticsScript = document.createElement('script');
+    analyticsScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KKJFP4WYF2');
+    `;
+    document.head.appendChild(analyticsScript);
   }
 
   render() {
