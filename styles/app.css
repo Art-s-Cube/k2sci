@@ -759,8 +759,12 @@ td p {
   color: #aec7d8;
 }
 .simSize {height: 312px}
+.featProd {
+ margin: auto; 
+}
 .featProd h2 {
-  text-align: right;
+  text-align: left;
+  margin: auto;
 }
 @media screen and (max-width: 500px) {
   .heroH1 {
