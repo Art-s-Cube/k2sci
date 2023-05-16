@@ -1,26 +1,24 @@
-import React from 'react';
+import Script from 'next/script'
 
-class AnalyticsEmbed extends React.Component {
-  componentDidMount() {
-    const script = document.createElement('script');
-    script.src = '//www.googletagmanager.com/gtag/js?id=G-KKJFP4WYF2';
-    script.async = true;
-    document.body.appendChild(script);
-
-    const analyticsScript = document.createElement('script');
-    analyticsScript.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
+function AnalyticsEmbed() {
+  return (
+    <div className="container">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=id=G-KKJFP4WYF2"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+           window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-KKJFP4WYF2');
-    `;
-    document.head.appendChild(analyticsScript);
-  }
-
-  render() {
-    return <div></div>;
-  }
+        `}
+      </Script>
+    </div>
+  )
 }
 
-export default AnalyticsEmbed;
+export default AnalyticsEmbed
