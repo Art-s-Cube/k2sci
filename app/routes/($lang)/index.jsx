@@ -174,7 +174,7 @@ export default function Homepage() {
               return (
                 <FeaturedCollections
                   collections={collections.nodes}
-                  title="Collections"
+                  title="Categories"
                 />
               );
             }}
