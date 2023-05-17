@@ -91,10 +91,8 @@ export default function App() {
       </head>
       <body>
         <Helmet>
-          <noscript>
-            {`<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P59LZWJ&gtm_auth=Y-iS3sG6bb2Cphm8C4Evzw&gtm_preview=env-1&gtm_cookies_win=x"
-              height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>`}
-          </noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P59LZWJ&gtm_auth=Y-iS3sG6bb2Cphm8C4Evzw&gtm_preview=env-1&gtm_cookies_win=x"
+              height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
         </Helmet>
         <Layout
           layout={data.layout}
