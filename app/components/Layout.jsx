@@ -28,10 +28,108 @@ export function Layout({children, layout}) {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <div className="">
-          <a href="#mainContent" className="sr-only">
-            Skip to content
-          </a>
+        <div className="topBar hidden h-nav lg:flex items-center sticky z-40 top-0 justify-between w-full leading-none gap-4 px-12 py-2">
+          <div className="textLeft">
+            <a href="tel:1-800-218-7613" className="topEmail">
+              <strong>Call: </strong>1-800-218-7613
+            </a>
+          </div>
+          <div className="textCenter"></div>
+          <div className="textRight">
+            <a
+              href="https://www.facebook.com/K2ScientificNC/"
+              className="topPhone"
+            >
+              <svg
+                id="uuid-c25b5de3-1f0f-4595-83c6-df0e326e21d4"
+                viewBox="0 0 30 30"
+              >
+                <rect
+                  x=".19"
+                  y=".08"
+                  width="29.83"
+                  height="29.83"
+                  rx="4.29"
+                  ry="4.29"
+                  fill="#4373b9"
+                />
+                <path
+                  d="m16.49,13.78v1.23h4.33l-1.17,3.07h-3.03v11.84h-4.27v-11.84h-2.76v-3.07h2.76v-1.26c0-1.88.57-3.44,1.65-4.51,1.11-1.1,2.78-1.69,4.81-1.69,1.34,0,2.58.26,3.4.7l-1.05,2.89c-.56-.27-1.19-.42-1.85-.42-1.82,0-2.82,1.09-2.82,3.06Z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a href="https://instagram.com/k2.scientific" className="topPhone">
+              <svg
+                id="uuid-3c8fefac-1cbb-4692-9cc9-fe2105f56b9d"
+                viewBox="0 0 30 30"
+              >
+                <defs>
+                  <linearGradient
+                    id="uuid-9ce43118-84a3-4bfa-8215-8b23d71fc2b4"
+                    x1="1.26"
+                    y1="28.78"
+                    x2="28.59"
+                    y2="1.44"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0" stopColor="#f9ad50" />
+                    <stop offset=".35" stopColor="#dd297b" />
+                    <stop offset=".62" stopColor="#8c469b" />
+                    <stop offset="1" stopColor="#5660ab" />
+                  </linearGradient>
+                </defs>
+                <rect
+                  x=".01"
+                  y=".19"
+                  width="29.83"
+                  height="29.83"
+                  rx="4.27"
+                  ry="4.27"
+                  fill="url(#uuid-9ce43118-84a3-4bfa-8215-8b23d71fc2b4)"
+                />
+                <path
+                  d="m19.54,6.26h-9.23c-2.55,0-4.62,2.07-4.62,4.62v8.45c0,2.55,2.07,4.62,4.62,4.62h9.23c2.55,0,4.62-2.07,4.62-4.62v-8.45c0-2.55-2.07-4.62-4.62-4.62Zm-12.22,4.62c0-1.65,1.34-2.99,2.99-2.99h9.23c1.65,0,2.99,1.34,2.99,2.99v8.45c0,1.65-1.34,2.99-2.99,2.99h-9.23c-1.65,0-2.99-1.34-2.99-2.99v-8.45Z"
+                  fill="#fff"
+                />
+                <path
+                  d="m14.93,19.41c2.37,0,4.3-1.93,4.3-4.3s-1.93-4.3-4.3-4.3-4.3,1.93-4.3,4.3,1.93,4.3,4.3,4.3Zm0-6.97c1.47,0,2.67,1.2,2.67,2.67s-1.2,2.67-2.67,2.67-2.67-1.2-2.67-2.67,1.2-2.67,2.67-2.67Z"
+                  fill="#fff"
+                />
+                <path
+                  d="m19.63,11.5c.64,0,1.16-.52,1.16-1.16s-.52-1.16-1.16-1.16-1.16.52-1.16,1.16.52,1.16,1.16,1.16Z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@k2scientific"
+              className="topPhone"
+            >
+              <svg
+                id="uuid-a8be50a0-5675-4b73-922a-5ce6074b7f47"
+                viewBox="0 0 30 30"
+              >
+                <rect
+                  x="0"
+                  y=".22"
+                  width="29.78"
+                  height="29.78"
+                  rx="4.29"
+                  ry="4.29"
+                  fill="#ed2224"
+                />
+                <path
+                  d="m21.21,21.71c-.44.05-.9.06-1.33.06-3.39,0-6.79,0-10.18,0-1.07,0-2.23-.03-3.06-.71-.93-.77-1.12-2.1-1.2-3.3-.1-1.65-.11-3.3-.03-4.95.05-.91.13-1.83.52-2.65.28-.59.75-1.12,1.35-1.4.7-.32,1.42-.27,2.17-.27,1.79,0,3.59,0,5.38,0,1.86,0,3.73,0,5.59,0,.88,0,1.83.02,2.55.53.93.66,1.18,1.91,1.3,3.04.21,2.08.22,4.19,0,6.27-.09.86-.23,1.77-.8,2.42-.56.65-1.39.9-2.27.99Z"
+                  fill="#fff"
+                />
+                <polygon
+                  points="17.92 15.11 12.86 12.19 12.86 18.03 17.92 15.11"
+                  fill="#ed2224"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
         <Header
           title={layout?.shop.name ?? 'K2 Scientific'}
@@ -111,9 +209,121 @@ function CartDrawer({isOpen, onClose}) {
 
 export function MenuDrawer({isOpen, onClose, menu}) {
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading={<img src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619" alt="Menu" width="150" />}>
+    <Drawer
+      open={isOpen}
+      onClose={onClose}
+      openFrom="left"
+      heading={
+        <img
+          src="https://cdn.shopify.com/s/files/1/0736/6298/8599/files/k2logo2.svg?v=1683746619"
+          alt="Menu"
+          width="150"
+        />
+      }
+    >
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
+      </div>
+      <div className="topBar h-nav lg:flex items-center sticky z-40 top-0 justify-between w-full leading-none gap-4 px-12 py-2">
+        <div className="textLeft">
+          <a href="tel:1-800-218-7613" className="topEmail">
+            <strong>Call: </strong>1-800-218-7613
+          </a>
+        </div>
+        <div className="textCenter"></div>
+        <div className="textRight">
+          <a
+            href="https://www.facebook.com/K2ScientificNC/"
+            className="topPhone"
+          >
+            <svg
+              id="uuid-c25b5de3-1f0f-4595-83c6-df0e326e21d4"
+              viewBox="0 0 30 30"
+            >
+              <rect
+                x=".19"
+                y=".08"
+                width="29.83"
+                height="29.83"
+                rx="4.29"
+                ry="4.29"
+                fill="#4373b9"
+              />
+              <path
+                d="m16.49,13.78v1.23h4.33l-1.17,3.07h-3.03v11.84h-4.27v-11.84h-2.76v-3.07h2.76v-1.26c0-1.88.57-3.44,1.65-4.51,1.11-1.1,2.78-1.69,4.81-1.69,1.34,0,2.58.26,3.4.7l-1.05,2.89c-.56-.27-1.19-.42-1.85-.42-1.82,0-2.82,1.09-2.82,3.06Z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+          <a href="https://instagram.com/k2.scientific" className="topPhone">
+            <svg
+              id="uuid-3c8fefac-1cbb-4692-9cc9-fe2105f56b9d"
+              viewBox="0 0 30 30"
+              className="instaGram"
+            >
+              <defs>
+                <linearGradient
+                  id="uuid-9ce43118-84a3-4bfa-8215-8b23d71fc2b4"
+                  x1="1.26"
+                  y1="28.78"
+                  x2="28.59"
+                  y2="1.44"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#f9ad50" />
+                  <stop offset=".35" stopColor="#dd297b" />
+                  <stop offset=".62" stopColor="#8c469b" />
+                  <stop offset="1" stopColor="#5660ab" />
+                </linearGradient>
+              </defs>
+              <rect
+                x=".01"
+                y=".19"
+                width="29.83"
+                height="29.83"
+                rx="4.27"
+                ry="4.27"
+                fill="url(#uuid-9ce43118-84a3-4bfa-8215-8b23d71fc2b4)"
+              />
+              <path
+                d="m19.54,6.26h-9.23c-2.55,0-4.62,2.07-4.62,4.62v8.45c0,2.55,2.07,4.62,4.62,4.62h9.23c2.55,0,4.62-2.07,4.62-4.62v-8.45c0-2.55-2.07-4.62-4.62-4.62Zm-12.22,4.62c0-1.65,1.34-2.99,2.99-2.99h9.23c1.65,0,2.99,1.34,2.99,2.99v8.45c0,1.65-1.34,2.99-2.99,2.99h-9.23c-1.65,0-2.99-1.34-2.99-2.99v-8.45Z"
+                fill="#fff"
+              />
+              <path
+                d="m14.93,19.41c2.37,0,4.3-1.93,4.3-4.3s-1.93-4.3-4.3-4.3-4.3,1.93-4.3,4.3,1.93,4.3,4.3,4.3Zm0-6.97c1.47,0,2.67,1.2,2.67,2.67s-1.2,2.67-2.67,2.67-2.67-1.2-2.67-2.67,1.2-2.67,2.67-2.67Z"
+                fill="#fff"
+              />
+              <path
+                d="m19.63,11.5c.64,0,1.16-.52,1.16-1.16s-.52-1.16-1.16-1.16-1.16.52-1.16,1.16.52,1.16,1.16,1.16Z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@k2scientific" className="topPhone">
+            <svg
+              id="uuid-a8be50a0-5675-4b73-922a-5ce6074b7f47"
+              viewBox="0 0 30 30"
+            >
+              <rect
+                x="0"
+                y=".22"
+                width="29.78"
+                height="29.78"
+                rx="4.29"
+                ry="4.29"
+                fill="#ed2224"
+              />
+              <path
+                d="m21.21,21.71c-.44.05-.9.06-1.33.06-3.39,0-6.79,0-10.18,0-1.07,0-2.23-.03-3.06-.71-.93-.77-1.12-2.1-1.2-3.3-.1-1.65-.11-3.3-.03-4.95.05-.91.13-1.83.52-2.65.28-.59.75-1.12,1.35-1.4.7-.32,1.42-.27,2.17-.27,1.79,0,3.59,0,5.38,0,1.86,0,3.73,0,5.59,0,.88,0,1.83.02,2.55.53.93.66,1.18,1.91,1.3,3.04.21,2.08.22,4.19,0,6.27-.09.86-.23,1.77-.8,2.42-.56.65-1.39.9-2.27.99Z"
+                fill="#fff"
+              />
+              <polygon
+                points="17.92 15.11 12.86 12.19 12.86 18.03 17.92 15.11"
+                fill="#ed2224"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </Drawer>
   );
@@ -139,9 +349,7 @@ function MenuMobileNav({menu, onClose}) {
               <Link
                 to={item.to}
                 onClick={() => handleItemClick(item)}
-                className={({isActive}) =>
-                  isActive ? 'pb-1 -mb-px' : 'pb-1'
-                }
+                className={({isActive}) => (isActive ? 'pb-1 -mb-px' : 'pb-1')}
               >
                 <Text as="span" size="copy">
                   {item.title}
@@ -446,7 +654,12 @@ function Footer({menu}) {
 function FooterLink({item}) {
   if (item.to.startsWith('http')) {
     return (
-      <a href={item.to} target={item.target} rel="noopener noreferrer"  className={item.title}>
+      <a
+        href={item.to}
+        target={item.target}
+        rel="noopener noreferrer"
+        className={item.title}
+      >
         {item.title}
       </a>
     );
@@ -468,7 +681,7 @@ function FooterMenu({menu}) {
   return (
     <ul className="footUl">
       {(menu?.items || []).map((item) => (
-        <li key={item.id} className="footmen" id={item.title} >
+        <li key={item.id} className="footmen" id={item.title}>
           <Disclosure>
             {({open}) => (
               <>
