@@ -786,7 +786,7 @@ td p {
   width: 30px;
 }
 .prodDesc {
-  height: fit-content;
+  height: fit-content !important;
 }
 @media screen and (max-width: 500px) {
   .heroH1 {
