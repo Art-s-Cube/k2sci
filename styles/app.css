@@ -766,6 +766,13 @@ td p {
   text-align: left;
   padding: 0px;
 }
+.topPhone {
+  float: left;
+  margin-left: 10px;
+}
+.topPhone svg {
+  width: 30px;
+}
 @media screen and (max-width: 500px) {
   .heroH1 {
     font-size: 2.5rem;
@@ -838,6 +845,21 @@ td p {
   .featProd h2 {
    text-align: left; 
   }
+  .topBar {
+    padding: 5% 10%;
+    max-height: fit-content !important;
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .textLeft{
+  margin-bottom: 10%;
+  }
+  .instaGram{
+    background-image: linear-gradient(to top right, #f9ad50, #dd297b, #8c469b, #5660ab);
+    border: 1px transparent solid;
+    border-radius: 4px;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1400px) {
   .gridFix {
@@ -850,6 +872,9 @@ td p {
   } 
   .floatingspec {
     grid-template-columns: repeat(1,minmax(0,1fr)) !Important;
+  }
+  .textLeft{
+  margin-bottom: 4%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1230px) {
