@@ -766,6 +766,18 @@ td p {
   text-align: left;
   padding: 0px;
 }
+.topBar{
+  max-height: 40px;
+}
+.textLeft{}
+.textCenter{}
+.textLeft{}
+.cls-1 {
+  fill: #fff;
+}
+.cls-2 {
+  fill: #1877f2;
+}
 .topPhone {
   float: left;
   margin-left: 10px;
