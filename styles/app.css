@@ -785,6 +785,9 @@ td p {
 .topPhone svg {
   width: 30px;
 }
+.prodDesc {
+  height: fit-content;
+}
 @media screen and (max-width: 500px) {
   .heroH1 {
     font-size: 2.5rem;
