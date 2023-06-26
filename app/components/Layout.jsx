@@ -362,7 +362,6 @@ function MenuMobileNav({menu, onClose}) {
                       <Link
                         key={subitem.id}
                         to={subitem.to}
-                        target={subitem.target}
                         prefetch="intent"
                         onClick={onClose}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -478,7 +477,6 @@ function DesktopHeader({isHome, menu, openCart}) {
               <li key={item.id} className="relative">
                 <Link
                   to={item.to}
-                  target={item.target}
                   prefetch="intent"
                   className={({isActive}) =>
                     isActive ? 'pb-1 -mb-px' : 'pb-1'
@@ -494,7 +492,6 @@ function DesktopHeader({isHome, menu, openCart}) {
                         <Link
                           key={subitem.id}
                           to={subitem.to}
-                          target={subitem.target}
                           prefetch="intent"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         >
@@ -656,7 +653,6 @@ function FooterLink({item}) {
     return (
       <a
         href={item.to}
-        target={item.target}
         rel="noopener noreferrer"
         className={item.title}
       >
@@ -666,7 +662,7 @@ function FooterLink({item}) {
   }
 
   return (
-    <Link to={item.to} target={item.target} prefetch="intent">
+    <Link to={item.to} prefetch="intent">
       {item.title}
     </Link>
   );
