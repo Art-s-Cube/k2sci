@@ -27,12 +27,14 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 export function Layout({children, layout}) {
   return (
     <>
-      <iframe
-        title="tag"
-        src="https://www.googletagmanager.com/ns.html?id=GTM-P59LZWJ"
-        height="0"
-        width="0"
-      ></iframe>
+      <noscript>
+        <iframe
+          title="tag"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-P59LZWJ"
+          height="0"
+          width="0"
+        ></iframe>
+      </noscript>
       <div className="flex flex-col min-h-screen">
         <div className="topBar hidden h-nav lg:flex items-center sticky z-40 top-0 justify-between w-full leading-none gap-4 px-12 py-2">
           <div className="textLeft">
